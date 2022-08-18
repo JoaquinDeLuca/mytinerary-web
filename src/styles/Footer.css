@@ -1,0 +1,19 @@
+.Footer-container{
+    background-color: rgba(117, 206, 235, 0.792);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+}
+
+.Footer-web{
+    display: flex;
+    gap: 30px;
+    font-size: 50px;
+    color:  white;
+}
+
+.Footer-copyright{
+    font-size: 30px;
+    color: white;
+}
