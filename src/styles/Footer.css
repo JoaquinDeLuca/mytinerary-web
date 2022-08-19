@@ -8,12 +8,19 @@
 
 .Footer-web{
     display: flex;
+    align-items: center;
     gap: 30px;
-    font-size: 50px;
-    color:  white;
+}
+.Footer-icon{
+    width: 60px;
 }
 
 .Footer-copyright{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-size: 30px;
-    color: white;
+    font-weight: 600;
+    color: black;
 }
