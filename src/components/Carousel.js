@@ -8,20 +8,20 @@ export default function Carousel(props) {
 
     const cities = props.data
 
-    const citiesView = (cities)=> (
+    const citiesView = (cities) => (
         <div className="Carousel-cities">
             <img className="Carousel-img" src={cities.url} alt={cities.city} />
-            <p>{cities.city}</p>
+            <p className="Carousel-citiesName">{cities.city}</p>
         </div>
     )
-  return (
+    return (
 
-    <div>
         <div>
-            {cities.slice(start,end).map(citiesView)}
+            <div className="Carousel-container">
+                {cities.slice(start, end).map(citiesView)}
+            </div>
+
+
         </div>
-
-
-    </div>
-  )
+    )
 }
