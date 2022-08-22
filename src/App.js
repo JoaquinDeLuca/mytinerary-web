@@ -1,21 +1,22 @@
 import './App.css';
 import Welcome from './pages/Welcome';
-import Footer from './components/Footer';
+
+
 // importo las dos paginas new
 
 import Home from './pages/Home';
 import Cities from './pages/Cities';
+import UnderConstruction from './pages/UnderConstruction';
+
 
 function App() {
   return (
     
     <div>
-      {/* <Welcome /> */}
-
-      <Home/>
+      <Welcome />
+      {/* <UnderConstruction /> */}
+      {/* <Home/> */}
       {/* <Cities/> */}
-
-      {/* <Footer /> */}
     </div>
   );
 }

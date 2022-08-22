@@ -1,31 +1,25 @@
+import "../styles/Carousel.css"
 
-export default function Carousel() {
+export default function Carousel(props) {
 
-    const cities = [
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-        { url: "" , names: ""},
-    ]
+    const range = props.range
+    const start = 0
+    const end = start + range
 
-    const citiesView = (
+    const cities = props.data
+
+    const citiesView = (cities)=> (
         <div className="Carousel-cities">
-            <img src="..." />
-            <p></p>
+            <img className="Carousel-img" src={cities.url} alt={cities.city} />
+            <p>{cities.city}</p>
         </div>
     )
   return (
 
     <div>
-        <div><h2>Popular MYtineraries</h2></div>
+        <div>
+            {cities.slice(start,end).map(citiesView)}
+        </div>
 
 
     </div>

@@ -2,7 +2,7 @@ import '../styles/Footer.css'
 
 export default function Footer() {
   return (
-    <div className='Footer-container'>
+    <footer className='Footer-container'>
       <div className='Footer-web'>
         <a href="https://www.facebook.com/" target="_blank" className='Footer-link'><img className='Footer-icon' src="https://i.ibb.co/SN2Wsgx/facebook.png" /></a>
         <a href="https://www.instagram.com/" target="_blank" className='Footer-link'><img className='Footer-icon' src="https://i.ibb.co/7ghYMbs/instagram.png" /></a>
@@ -12,6 +12,6 @@ export default function Footer() {
         <p>  Mytinerary | © 2022</p>
         <p> Ojeda | De Luca | Ochoa</p>
       </div>
-    </div>
+    </footer>
   )
 }
