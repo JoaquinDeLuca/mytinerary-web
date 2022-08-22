@@ -40,7 +40,6 @@
 }
 
 .CalltoAction-container{
-    background-color: lightblue;
     display: flex;
     justify-content: center;
     flex-direction: column;
