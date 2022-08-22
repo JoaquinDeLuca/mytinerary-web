@@ -1,7 +1,4 @@
 import './App.css';
-import Welcome from './pages/Welcome';
-
-
 // importo las dos paginas new
 
 import Home from './pages/Home';
@@ -11,9 +8,9 @@ import UnderConstruction from './pages/UnderConstruction';
 
 function App() {
   return (
-    
+
     <div>
-      <Welcome />
+      <Home />
       {/* <UnderConstruction /> */}
       {/* <Home/> */}
       {/* <Cities/> */}
