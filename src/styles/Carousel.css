@@ -1,8 +1,27 @@
 .Carousel-img{
-    height: 150px;
-    width: 300px;
+    height: 270px;
+    width: 500px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+}
+.Carousel-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .Carousel-cities{
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:  10px 26px;
+}
+
+.Carousel-citiesName{
+    margin: 20px 0px;
+    font-size: 30px;
+    font-weight: 500;
 }
