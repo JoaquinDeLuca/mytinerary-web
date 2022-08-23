@@ -4,6 +4,7 @@ import './App.css';
 import Home from './pages/Home';
 import Cities from './pages/Cities';
 import UnderConstruction from './pages/UnderConstruction';
+import NewCity from './pages/NewCity';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       {/* <UnderConstruction /> */}
       {/* <Home/> */}
       {/* <Cities/> */}
+      {/* <NewCity /> */}
     </div>
   );
 }
