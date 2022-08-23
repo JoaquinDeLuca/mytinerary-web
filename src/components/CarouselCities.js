@@ -20,7 +20,7 @@ export default function CarouselCities() {
 
   return (
     <div>
-      <Carousel data={cities} range={4} />
+      <Carousel data={cities} range={4} interval={5} slides={3}/>
     </div>
   )
 }
