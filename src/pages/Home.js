@@ -4,11 +4,12 @@ import WebsiteLayouts from "../layouts/WebsiteLayouts"
 import Welcome from '../components/Welcome'
 
 export default function Home() {
+  const ButtonText = "Start"
   return (
-    <WebsiteLayouts>
+    <>
       <Welcome />
-      <CalltoAction />
+      <CalltoAction linkTo='cities' btntext={ButtonText} />
       <CarouselCities />
-    </WebsiteLayouts>
+    </>
   )
 }
