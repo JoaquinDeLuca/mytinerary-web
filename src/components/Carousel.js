@@ -53,8 +53,8 @@ export default function Carousel(props) {
         clearInterval(intervalId)
     }
 
-    console.log("Start: " + start)
-    console.log("End: " + end)
+    // console.log("Start: " + start)
+    // console.log("End: " + end)
 
     return (
 
