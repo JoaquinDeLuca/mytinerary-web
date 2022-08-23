@@ -5,6 +5,12 @@
     border-radius: 10px;
     box-shadow: 3px 3px 10px black;
 }
+.Caorusel{
+    display: flex;
+    align-items: center;
+    margin: 0px 20px;
+}
+
 .Carousel-container{
     width: 100%;
     display: flex;
