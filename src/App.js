@@ -7,10 +7,14 @@ import UnderConstruction from './pages/UnderConstruction';
 import NewCity from './pages/NewCity';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import WebsiteLayouts from './layouts/WebsiteLayouts';
+import ScrollToTop from './components/ScrollToTop';
+
+
 
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <WebsiteLayouts>
       <Routes>
         <Route path='/' element={<Home />} />
