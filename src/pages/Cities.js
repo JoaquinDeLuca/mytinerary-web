@@ -1,11 +1,15 @@
 import WebsiteLayouts from "../layouts/WebsiteLayouts"
+import Allcity from "../components/Allcity"
+
+
 
 export default function Cities() {
+
   return (
-    <>
-      <h2>
-          Todas las cities podes ver aca  Main
-      </h2>
-    </>
+    <div>
+      <h2>Todas las cities podes ver aca  Maindds</h2>
+      <Allcity />
+    </div>
+   
   )
 }
