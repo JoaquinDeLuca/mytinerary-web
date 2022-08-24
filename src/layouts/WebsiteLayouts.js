@@ -1,16 +1,16 @@
 import Footer from "../components/Footer"
+import Header from "../components/Header"
 import '../styles/WebsiteLayouts.css'
 
 export default function WebsiteLayouts(props) {
 
   return (
     <>
-      <div>Navbar ira el componente</div>
+      <Header />
       <main>
         {props.children}
       </main>
       <Footer />
-
     </>
   )
 }
