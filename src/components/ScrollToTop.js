@@ -13,7 +13,5 @@ export default function ScrollToTop() {
 
     }, [pathname])
 
-  return (
-    <div>ScrollToTop</div>
-  )
+  return (null)
 }
