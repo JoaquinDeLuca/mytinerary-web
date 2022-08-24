@@ -4,15 +4,17 @@
     justify-content: space-around;
     align-items: center;
     height: 250px;
+    width: 100%;
 }
 
 .Footer-web{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
 }
 .Footer-icon{
     width: 60px;
+    filter: invert(1);
 }
 
 .Footer-copyright{
@@ -22,7 +24,41 @@
     justify-content: center;
     font-size: 30px;
     font-weight: 600;
-    color: black;
+    color: white;
+}
+
+.Footer-github{
+    text-decoration: none;
+    color: white;
+}
+
+.Footer-scroll {
+    position: absolute;
+    right: 30px;
+    font-size: 100px;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 100px;
+    border: none;
+}
+
+.Footer-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer-navLink{
+    color: white;
+    text-decoration: none;
+    font-size: 26px;
+    border: 3px solid white;
+    border-radius: 8px;
+    padding: .3rem 1rem;
+    margin: 1rem;
+    font-weight: 600;
 }
 
 
