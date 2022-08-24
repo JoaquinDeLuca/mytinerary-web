@@ -3,8 +3,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 250px;
+    min-height: 24vh;
     width: 100%;
+    gap: 0.1rem;
+    padding: 0.3rem;
+    padding-top: 1rem;
 }
 
 .Footer-web{
@@ -13,16 +16,19 @@
     gap: 25px;
 }
 .Footer-icon{
-    width: 60px;
+    width: 50px;
     filter: invert(1);
 }
-
+.Footer-icon2{
+    width: 60px;
+    color: white;
+}
 .Footer-copyright{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 600;
     color: white;
 }
@@ -33,9 +39,7 @@
 }
 
 .Footer-scroll {
-    position: absolute;
-    right: 30px;
-    font-size: 100px;
+   padding-left: 0.5rem;
     background: none;
     color: white;
     cursor: pointer;
@@ -49,6 +53,11 @@
     justify-content: center;
     align-items: center;
 }
+.Footer-box{
+    display: flex;
+    gap: 2rem;
+    align-content: center;
+}
 
 .Footer-navLink{
     color: white;
@@ -57,19 +66,45 @@
     border: 3px solid white;
     border-radius: 8px;
     padding: .3rem 1rem;
-    margin: 1rem;
+    margin: .5rem;
     font-weight: 600;
 }
 
 
 @media (max-width: 768px) {
     .Footer-container{
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .Footer-copyright{
+        font-size: 22px;
+        padding: 0.5rem;
+    }
+    .Footer-icon{
+        width: 40px;
+       
+    }
+    .Footer-navLink{
+        font-size: 22px;
+    }
+    .Footer-nav{
+        display: flex;
+        flex-direction: row;
     }
 }
 
+
 @media (max-width: 320px) {
     .Footer-copyright{
-        font-size: 25px;
+        font-size: 22px;
+    }
+    .Footer-nav{
+        margin: 0.5rem;
+    }
+    .Footer-navLink{
+        padding: 0.4rem;
+    }
+    .Footer-box{
+        gap: 0.2rem;
     }
 }
