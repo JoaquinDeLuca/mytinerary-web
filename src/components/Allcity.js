@@ -1,4 +1,4 @@
-import AllCities from "./AllCities"
+import PrintCity from "./PrintCity"
 
 export default function Allcity() {
     const cities = [
@@ -18,7 +18,7 @@ export default function Allcity() {
 
   return (
     <div>
-        <AllCities data={cities}/>
+        <PrintCity data={cities}/>
     </div>
   )
 }
