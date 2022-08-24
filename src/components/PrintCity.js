@@ -7,15 +7,18 @@ export default function AllCities(props) {
     const showCities = (cities) => {
         return (
             <div className="PrintCity-container">
-                <img className="PrintCity-img" src={cities.url} alt={cities.city}/>
-                <p className="PrintCity-name">{cities.city}</p>
+                <div className="PrintCity-Card">
+                    <img className="PrintCity-img" src={cities.url} alt={cities.city}/>
+                    <p className="PrintCity-name">{cities.city}</p>
+                    <p className="PrintCity-p">{cities.description}</p>
+                </div>
             </div>
         )
     }
 
   return (
-    <div>
+    <>
         {cities.map(showCities)}
-    </div>
+    </>
   )
 }
