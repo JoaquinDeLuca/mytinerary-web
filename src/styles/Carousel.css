@@ -12,7 +12,11 @@
     justify-content: center;
     margin: 0px 20px;
 }
-
+.Carousel-h2{
+    text-align: center;
+    font-size: 40px;
+    margin: 20px;
+}
 .Carousel-container{
     width: 90%;
     display: flex;
@@ -36,14 +40,14 @@
     font-weight: 500;
 }
 .Carousel-box{
-    height: 38vh;
-    width: 34vw;
+    height: 33vh;
+    width: 30vw;
 }
 
 @media (max-width: 768px) {
     .Carousel-box{
-        height: 44vh;
-        width: 68vw;
+        height: 30vh;
+        width: 60vw;
     }
     .Carousel-container{
       padding: 0;
@@ -54,17 +58,32 @@
         font-size: 22px;
         
     }
+    .Carousel-h2{
+        text-align: center;
+        font-size: 30px;
+        margin: 20px;
+    }
 }
 @media (max-width: 425px) {
     .Carousel-box{
-        height: 35vh;
-        width: 68vw;
+        height: 24vh;
+        width: 60vw;
+    }
+    .Carousel-h2{
+        text-align: center;
+        font-size: 20px;
+        margin: 20px;
     }
 }
 
 @media (max-width: 320px) {
     .Carousel-box{
-        height: 28vh;
-        width: 62vw;
+        height: 20vh;
+        width: 58vw;
+    }
+    .Carousel-h2{
+        text-align: center;
+        font-size: 18px;
+        margin: 20px;
     }
 }
