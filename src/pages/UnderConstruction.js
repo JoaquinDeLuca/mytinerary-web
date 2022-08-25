@@ -1,4 +1,3 @@
-import WebsiteLayouts from "../layouts/WebsiteLayouts"
 import "../styles/UnderConstruction.css"
 
 export default function UnderConstruction() {

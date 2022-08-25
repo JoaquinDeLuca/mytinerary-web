@@ -1,4 +1,3 @@
-import WebsiteLayouts from "../layouts/WebsiteLayouts"
 import Allcity from "../components/Allcity"
 
 
