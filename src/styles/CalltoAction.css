@@ -1,42 +1,39 @@
+
 .CalltoAction-similbtn {
-    margin-top: 0px;
-    padding: 15px 35px;
-    border: unset;
-    border-radius: 15px;
-    color: #212121;
-    z-index: 1;
-    background: #ffffff;
+    padding: .8rem 2.8rem;
+    margin: 1rem;
+    display: inline-block;
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+    border: 3px solid black;
+    cursor: pointer;
     position: relative;
-    font-weight: 1000;
-    font-size: 17px;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.42);
-    transition: all 250ms;
-    overflow: hidden;
+    background-color: transparent;
     text-decoration: none;
-   }
-   
-   .CalltoAction-similbtn::before {
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    border-radius: 8px;
+}
+
+.CalltoAction-similbtn::before {
     content: "";
     position: absolute;
-    top: 0;
     left: 0;
-    height: 100%;
-    width: 0;
-    border-radius: 15px;
-    background-color: #212121;
-    z-index: -1;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-    transition: all 250ms
-   }
-   
-   .CalltoAction-similbtn:hover {
-    color: #e8e8e8;
-   }
-   
-   .CalltoAction-similbtn:hover::before {
+    top: 0;
     width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+.CalltoAction-similbtn:hover::before {
+    transform: translateX(0);
+}
+.CalltoAction-similbtn:hover{
+    color: rgba(234,210,172,1);
 }
 
 .CalltoAction-container{
