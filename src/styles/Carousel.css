@@ -36,14 +36,14 @@
     font-weight: 500;
 }
 .Carousel-box{
-    height: 38vh;
-    width: 34vw;
+    height: 33vh;
+    width: 30vw;
 }
 
 @media (max-width: 768px) {
     .Carousel-box{
-        height: 44vh;
-        width: 68vw;
+        height: 30vh;
+        width: 60vw;
     }
     .Carousel-container{
       padding: 0;
@@ -57,14 +57,14 @@
 }
 @media (max-width: 425px) {
     .Carousel-box{
-        height: 35vh;
-        width: 68vw;
+        height: 28vh;
+        width: 60vw;
     }
 }
 
 @media (max-width: 320px) {
     .Carousel-box{
-        height: 28vh;
+        height: 26vh;
         width: 62vw;
     }
 }
