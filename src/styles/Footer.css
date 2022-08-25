@@ -39,7 +39,7 @@
 }
 
 .Footer-scroll {
-   padding-left: 0.5rem;
+    padding-left: 0.5rem;
     background: none;
     color: white;
     cursor: pointer;
@@ -60,14 +60,40 @@
 }
 
 .Footer-navLink{
-    color: white;
-    text-decoration: none;
-    font-size: 26px;
-    border: 3px solid white;
-    border-radius: 8px;
     padding: .3rem 1rem;
     margin: .5rem;
-    font-weight: 600;
+    display: inline-block;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    border-radius: 8px;
+}
+
+.Footer-navLink::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+.Footer-navLink:hover::before {
+    transform: translateX(0);
+}
+.Footer-navLink:hover{
+    color: rgba(66,129,164,1);
 }
 
 
