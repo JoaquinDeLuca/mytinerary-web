@@ -8,10 +8,9 @@ import { useState } from 'react'
 const pages = [
     { name: 'Home', to: '/' },
     { name: 'Cities', to: '/cities' },
-    { name: 'New City', to: '/newcity' },
+    { name: 'New City', to: '*' },
 ]
 
-const link = (page) => <li><LinkRouter className='Header-link' to={page.to}>{page.name}</LinkRouter></li>
 
 export default function Header() {
     const [menu, setMenu] = useState(false)
@@ -20,7 +19,7 @@ export default function Header() {
     const toggleMenu = () => {
         setMenu(!menu)
     }
-
+    const link = (page) => <li onClick={toggleMenu}><LinkRouter className='Header-link' to={page.to}>{page.name}</LinkRouter></li>
 
     const HandleOpen = () => {
         if (open) {
@@ -32,7 +31,9 @@ export default function Header() {
 
     return (
         <header className={`${menu ? 'HeaderisActive' : ''} `}>
-            <img className='Header-logo' src={logo3} alt='logo' />
+            <LinkRouter to="/">
+                <img className='Header-logo' src={logo3} alt='logo' />
+            </LinkRouter>
             <div className='Header-NavContainer'>
                 <nav className={`Header-nav ${menu ? 'isActive' : ''} `}>
                     <div className='Header-Backgound'>&nbsp;</div>
