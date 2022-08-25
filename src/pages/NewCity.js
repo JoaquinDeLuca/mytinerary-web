@@ -1,4 +1,3 @@
-import WebsiteLayouts from "../layouts/WebsiteLayouts"
 
 export default function NewCity() {
   return (
@@ -7,10 +6,5 @@ export default function NewCity() {
           aca van las new city
       </h2>       
     </>
-
-
-
-
-
   )
 }
