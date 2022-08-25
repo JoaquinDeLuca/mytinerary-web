@@ -1,6 +1,7 @@
 .Carousel-img{
-    height: 270px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     border: 3px solid black;
     border-radius: 10px;
     box-shadow: 3px 3px 10px black;
@@ -8,26 +9,62 @@
 .Caorusel{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 0px 20px;
 }
 
 .Carousel-container{
-    width: 85%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .Carousel-cities{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin:  10px 26px;
+    margin:  10px 20px;
 }
 
 .Carousel-citiesName{
     margin: 20px 0px;
     font-size: 30px;
     font-weight: 500;
+}
+.Carousel-box{
+    height: 38vh;
+    width: 34vw;
+}
+
+@media (max-width: 768px) {
+    .Carousel-box{
+        height: 44vh;
+        width: 68vw;
+    }
+    .Carousel-container{
+      padding: 0;
+      margin: 0;
+    }
+    .Carousel-citiesName{
+        margin: 10px 0px;
+        font-size: 22px;
+        
+    }
+}
+@media (max-width: 425px) {
+    .Carousel-box{
+        height: 35vh;
+        width: 68vw;
+    }
+}
+
+@media (max-width: 320px) {
+    .Carousel-box{
+        height: 28vh;
+        width: 62vw;
+    }
 }
