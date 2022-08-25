@@ -4,6 +4,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
+    z-index: 2;
 }
 
 .Header-link{
@@ -69,7 +70,7 @@ header{
 .Header-menu{
     position: absolute;
     background-color: #fe948c;
-    top: 110px;
+    top: 120px;
     right: 0;
 }
 .Header-profileMenu{
@@ -88,13 +89,13 @@ header{
     font-size: 26px;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:782px){
     header{
         padding: 1.5rem 2.5rem;
     }
     .Header-nav{
         position:fixed;
-        top: 110px;
+        top: 118px;
         left:100%;
         background-color: #fe938c;
         height: 100%;
@@ -130,7 +131,7 @@ header{
     .Header-menu{
         position: absolute;
         background-color: #fe948c;
-        top: 110px;
+        top: 118px;
         right: 0;
     }
     .Header-logo{
