@@ -1,14 +1,28 @@
- 
 
 .Welcome-conatiner{
-    background-image: linear-gradient(45deg, rgba(246, 246, 246, 0.727),rgba(251, 209, 124, 0.841)),url(https://img.freepik.com/vector-gratis/conjunto-pegatinas-distintivos-viaje_53876-100734.jpg?w=740&t=st=1660862125~exp=1660862725~hmac=c435c96a54e9714f35a166f56a66c271b6ae876ffc032fed1334a686ef98e846);
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center ;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.Welcome-background{
+    width: 200vh;
+    opacity: .2;
+    position: absolute;
+}
+
+.Welcome-text{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 4rem;
 }
 
 .Welcome-title{
@@ -18,5 +32,14 @@
 
 .Welcome-slogan{
     font-size: 30px;
+}
 
+@media screen and (max-width:782px){
+    .Welcome-title{
+        font-size: 18vw;
+    }
+    
+    .Welcome-slogan{
+        font-size: 6vw;
+    }
 }
