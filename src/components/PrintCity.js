@@ -8,9 +8,9 @@ export default function AllCities(props) {
         return (
             <div className="PrintCity-container">
                 <div className="PrintCity-Card">
-                    <img className="PrintCity-img" src={cities.url} alt={cities.city}/>
+                    <img className="PrintCity-img" src={cities.photo} alt={cities.city}/>
                     <p className="PrintCity-name">{cities.city}</p>
-                    <p className="PrintCity-p">{cities.description}</p>
+                    {/* <p className="PrintCity-p">{cities.description}</p> */}
                 </div>
             </div>
         )
