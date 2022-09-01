@@ -8,7 +8,8 @@ import NewCity from './pages/NewCity';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import WebsiteLayouts from './layouts/WebsiteLayouts';
 import ScrollToTop from './components/ScrollToTop';
-
+import EditCity from './pages/EditCity';
+import City from './pages/City'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/cities' element={<Cities/>} />
         <Route path='/City'   element={<City/>}/>
         <Route path='/newcity' element={<NewCity />} />
+        <Route path='/editcity' element={<EditCity />} />
       </Routes>
       </WebsiteLayouts>
     </BrowserRouter>
