@@ -1,10 +1,9 @@
+import Input from "../components/Input";
 
 export default function NewCity() {
   return (
     <>
-      <h2>
-          aca van las new city
-      </h2>       
+      <Input />    
     </>
   )
 }
