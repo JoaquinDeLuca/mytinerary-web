@@ -1,6 +1,7 @@
 import PrintCity from "./PrintCity"
 import axios from "axios"
 import { useEffect, useState, useRef } from "react"
+import '../styles/Allcity.css'
 
 export default function Allcity() {
   // const cities = [
@@ -36,10 +37,14 @@ export default function Allcity() {
 
   return (
     <>
-      <div>
-        <input name="text" type="text" placeholder="Find city:" ref={searchInput} onChange={searchValue} />
+     <div className="Allcity-container">
+        <div className="Allcity-divInput">
+          <input className="Allcity-input" name="text" type="text" placeholder="Find city:" ref={searchInput} onChange={searchValue} />
+        </div>
+        <div className="Allcity-Printcity">
+          <PrintCity data={cities} />
+        </div>
       </div>
-      <PrintCity data={cities} />
     </>
   )
 }
