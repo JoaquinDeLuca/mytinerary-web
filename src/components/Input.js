@@ -10,7 +10,8 @@ export default function Input() {
         country: "",
         photo: "",
         population: undefined,
-        fundation: undefined
+        fundation: undefined,
+        information: ""
     }
 
     const [city,setCity] = useState(datosInicial)
@@ -30,7 +31,8 @@ export default function Input() {
             country: city.country,
             photo: city.photo,
             population: city.population,
-            fundation: city.fundation
+            fundation: city.fundation,
+            information: city.information
         }
 
         await axios.post('http://localhost:4000/cities/' , newCity)
@@ -50,6 +52,7 @@ export default function Input() {
             <input className='Input-input' name="photo" type="text" placeholder="Photo"  value={city.photo} onChange={capturoData} required/>         
             <input className='Input-input' name="population" type="number" placeholder="Population" value={city.population} onChange={capturoData} required/>
             <input className='Input-input' name="fundation" type="text" placeholder="Fundation" value={city.fundation} onChange={capturoData} required/>
+            <input className='Input-input' name="information" type="text" placeholder="information" value={city.information} onChange={capturoData} required />
             <button className='Input-button'>Send</button>
         </form>
     </div>

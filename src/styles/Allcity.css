@@ -1,6 +1,6 @@
 .Allcity-container{
     margin: 40px 0px;
-    padding: 10px;
+    padding: 2px;
 }
 .Allcity-divInput{
     display: flex;
@@ -38,3 +38,12 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+
+
+@media (max-width: 320px){
+    .Allcity-input{
+        width: 290px;
+    }
+}
+
