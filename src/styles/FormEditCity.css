@@ -1,0 +1,47 @@
+.FormEditCity-Container{
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.FormEditCity-Containerbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+.FormEditCity-input{
+    margin: 0.5rem;
+    height: 3rem;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.5rem;
+    font-size: 20px;
+}
+.FormEditCity-button{
+    height: 2rem;
+    width: 5rem;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #fe938c;
+    font-weight: bold;
+}
+.FormEditCity-h2{
+    font-size: 40px;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .FormEditCity-Containerbox{
+        width: 60%;
+    }
+}
+@media (max-width: 320px) {
+    .FormEditCity-Containerbox{
+        width: 80%;
+    }
+}
