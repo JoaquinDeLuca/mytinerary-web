@@ -42,14 +42,15 @@ export default function Input() {
     
 
   return (
-    <div >
-        <form onSubmit={saveData} className='Input-container' >
+    <div className='Input-Container'>
+        <h2 className='Input-h2'>NewCity</h2>
+        <form onSubmit={saveData} className='Input-Containerbox' >
             <input className='Input-input' name="city" type="text" placeholder="City" value={city.city} onChange={capturoData} required />
             <input className='Input-input' name="country" type="text" placeholder="Country" value={city.country} onChange={capturoData} required/>
             <input className='Input-input' name="photo" type="text" placeholder="Photo"  value={city.photo} onChange={capturoData} required/>         
             <input className='Input-input' name="population" type="number" placeholder="Population" value={city.population} onChange={capturoData} required/>
             <input className='Input-input' name="fundation" type="text" placeholder="Fundation" value={city.fundation} onChange={capturoData} required/>
-            <button>Send</button>
+            <button className='Input-button'>Send</button>
         </form>
     </div>
   )
@@ -116,3 +117,5 @@ export default function Input() {
 //     </div>
 // )
 // }
+
+
