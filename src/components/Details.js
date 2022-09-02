@@ -21,7 +21,7 @@ export default function Details() {
     return(
       <div className="Details-container">
         <div className="Details-Card">
-          <div>
+          <div className='Details-containerImg'>
             <img className="Details-img" src={city.photo} alt="img" />
           </div>
             <div className='Details-containe-p'>
