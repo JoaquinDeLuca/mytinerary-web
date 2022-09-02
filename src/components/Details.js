@@ -19,6 +19,8 @@ export default function Details() {
   
   const printDetails = (city) => {
     return(
+      <>
+      <button className='Details-btn'>Back</button>
       <div className="Details-container">
         <div className="Details-Card">
           <div className='Details-containerImg'>
@@ -32,6 +34,7 @@ export default function Details() {
             </div>
         </div>
       </div>
+      </>
 
     )
   }
