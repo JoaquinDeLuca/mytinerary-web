@@ -37,7 +37,7 @@ export default function Footer() {
       <div className='Footer-box'>
         <div className='Footer-nav'>
           <LinkRouter className="Footer-navLink" to="/cities">Cities</LinkRouter>
-          <LinkRouter className="Footer-navLink" to="*">New City</LinkRouter>
+          <LinkRouter className="Footer-navLink" to="/newcity">New City</LinkRouter>
         </div>
         <button onClick={scrollToTop} className="Footer-scroll">
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" viewBox="0 0 16 16">

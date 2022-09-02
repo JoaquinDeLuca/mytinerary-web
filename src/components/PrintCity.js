@@ -1,24 +1,27 @@
 import "../styles/PrintCity.css"
+import { Link as LinkRouter } from 'react-router-dom'
 
 export default function AllCities(props) {
     let cities = props.data
     // console.log(cities)
-     
+
     const showCities = (cities) => {
         return (
-            <div className="PrintCity-container">
-                <div className="PrintCity-Card">
-                    <img className="PrintCity-img" src={cities.url} alt={cities.city}/>
-                    <p className="PrintCity-name">{cities.city}</p>
-                    <p className="PrintCity-p">{cities.description}</p>
+            <LinkRouter className="PrintCity-link" to={`/City?${cities._id}`} >
+                <div className="PrintCity-container">
+                    <div className="PrintCity-Card">
+                        <img className="PrintCity-img" src={cities.photo} alt={cities.city} />
+                        <p className="PrintCity-name">{cities.city}</p>
+                        <p className="PrintCity-p">{cities.information}</p>
+                    </div>
                 </div>
-            </div>
+            </LinkRouter>
         )
     }
 
-  return (
-    <>
-        {cities.map(showCities)}
-    </>
-  )
+    return (
+        <>
+            {cities.map(showCities)}
+        </>
+    )
 }

@@ -8,7 +8,7 @@ import { useState } from 'react'
 const pages = [
     { name: 'Home', to: '/' },
     { name: 'Cities', to: '/cities' },
-    { name: 'New City', to: '*' },
+    { name: 'New City', to: '/newcity' },
 ]
 
 
