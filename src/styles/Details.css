@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 60vh; */
+
 }
 .Details-Card{
     display: flex;
@@ -42,7 +42,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 63vh;
     }
     .Details-Card{
         display: flex;
@@ -84,7 +83,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 63vh;
     }
     .Details-Card{
         display: flex;
@@ -119,6 +117,4 @@
         font-weight: 500;
         margin-bottom: 10px;
     }
-
-    
 }
