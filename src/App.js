@@ -21,7 +21,7 @@ function App() {
         <Route path='/' element={<Home />} />
         {/* <Route path='*' element={<UnderConstruction />} /> */}
         <Route path='/cities' element={<Cities/>} />
-        <Route path='/City/'   element={<City/>}/>
+        <Route path='/city/:id'   element={<City/>}/>
         <Route path='/newcity' element={<NewCity />} />
         <Route path='/editcity' element={<EditCity />} />
       </Routes>
