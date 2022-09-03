@@ -2,6 +2,7 @@ import '../styles/Details.css'
 import axios from "axios"
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { Link as LinkRouter } from 'react-router-dom'
 
 export default function Details() {
 
@@ -20,7 +21,13 @@ export default function Details() {
   const printDetails = (city) => {
     return(
       <>
-      <button className='Details-btn'>Back</button>
+      <LinkRouter to="/cities">
+      <button className='Details-btn'><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+        </svg>  Back
+      </button>
+
+      </LinkRouter>
       <div className="Details-container">
         <div className="Details-Card">
           <div className='Details-containerImg'>
