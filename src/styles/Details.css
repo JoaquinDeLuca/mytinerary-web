@@ -118,3 +118,40 @@
         margin-bottom: 10px;
     }
 }
+
+.Details-btn{
+    padding: 0.3rem 1rem;
+    margin: 2rem 1rem;
+    display: inline-block;
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+    border: 3px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    border-radius: 8px;
+}
+
+.Details-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+.Details-btn:hover::before {
+    transform: translateX(0);
+}
+.Details-btn:hover{
+    color: rgba(230,184,156,1);
+}
