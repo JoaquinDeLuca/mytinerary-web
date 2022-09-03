@@ -25,6 +25,7 @@ export default function CarouselCities() {
   const initialCity = 0
   const endCity = 12
 
+
   useEffect(() => {
     axios.get('http://localhost:4000/cities')
       .then(response => setCities(response.data))
