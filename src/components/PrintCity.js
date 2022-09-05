@@ -21,7 +21,7 @@ export default function AllCities(props) {
 
     return (
         <>
-            {cities.map(showCities)}
+            {cities?.map(showCities)}
         </>
     )
 }
