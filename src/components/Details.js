@@ -2,32 +2,22 @@ import '../styles/Details.css'
 import axios from "axios"
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-<<<<<<< HEAD
 import api from '../api'
-=======
 import { Link as LinkRouter } from 'react-router-dom'
->>>>>>> 75e3961bb5fa65ed9d9c3eeaf6bbcb31c5193458
 
 export default function Details() {
 
   // Me traigo el id que pasa por URL, 
-  let {id} = useParams()
-  // console.log(`Este es: ${id}`)
+  let { id } = useParams()
+  // console.log(Este es: ${id})
 
   const [cities, setCities] = useState([])
-  
+
   useEffect(() => {
-<<<<<<< HEAD
-    const obtenerDatos = () =>  {
-      axios.get(api + `/cities/${id}`)
-        .then(response => setCities(response.data))
-    }
-    obtenerDatos()
-=======
-    axios.get(`http://localhost:4000/cities/${id}`)
-        .then(response => setCities(response.data.response))
->>>>>>> 75e3961bb5fa65ed9d9c3eeaf6bbcb31c5193458
-  },[id])
+    axios.get(api+`/cities/${id}`)
+      .then(response => setCities(response.data.response))
+  }, [id])
+
 
   
   const printDetails = (city) => {

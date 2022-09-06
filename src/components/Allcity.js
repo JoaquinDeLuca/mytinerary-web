@@ -2,11 +2,8 @@ import PrintCity from "./PrintCity"
 import axios from "axios"
 import { useEffect, useState, useRef } from "react"
 import '../styles/Allcity.css'
-<<<<<<< HEAD
 import api from '../api'
-=======
-import {useGetAllCitiesQuery} from "../features/citiesApi"
->>>>>>> 75e3961bb5fa65ed9d9c3eeaf6bbcb31c5193458
+import {useGetAllCitiesQuery} from '../features/citiesApi'
 
 export default function Allcity() {
   // const cities = [
@@ -25,13 +22,8 @@ export default function Allcity() {
   // ]
 
 
-<<<<<<< HEAD
-  const [cities, setCities] = useState([])
-  const URL = api + '/cities?city='
-=======
   // const [cities, setCities] = useState([])
-  // const URL = 'http://localhost:4000/cities?city='
->>>>>>> 75e3961bb5fa65ed9d9c3eeaf6bbcb31c5193458
+  // const URL = api + '/cities?city='
   const searchInput = useRef()
   // const [value, setValue] = useState("")
   const searchValue = () => {
