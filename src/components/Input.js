@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import '../styles/Input.css'
-
+import api from '../api'
 
 export default function Input() {
 
@@ -35,7 +35,7 @@ export default function Input() {
             information: city.information
         }
 
-        await axios.post('http://localhost:4000/cities/' , newCity)
+        await axios.post(api + '/cities/' , newCity)
 
         setCity({...datosInicial})
         e.target.reset()

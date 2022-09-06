@@ -2,6 +2,7 @@ import '../styles/Details.css'
 import axios from "axios"
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import api from '../api'
 
 export default function Details() {
 
@@ -20,7 +21,7 @@ export default function Details() {
   
   useEffect(() => {
     const obtenerDatos = () =>  {
-      axios.get(`http://localhost:4000/cities/${id}`)
+      axios.get(api + `/cities/${id}`)
         .then(response => setCities(response.data))
     }
     obtenerDatos()
