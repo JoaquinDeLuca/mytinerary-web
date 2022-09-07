@@ -23,7 +23,7 @@ function App() {
         <Route path='/cities' element={<Cities/>} />
         <Route path='/city/:id'   element={<City/>}/>
         <Route path='/newcity' element={<NewCity />} />
-        <Route path='/editcity' element={<EditCity />} />
+        <Route path='/editcity/:id' element={<EditCity />} />
       </Routes>
       </WebsiteLayouts>
     </BrowserRouter>
