@@ -3,6 +3,7 @@ import axios from "axios"
 import { useEffect, useState, useRef } from "react"
 import '../styles/Allcity.css'
 import api from '../api'
+import {useGetAllCitiesQuery} from '../features/citiesApi'
 
 export default function Allcity() {
   // const cities = [
@@ -22,7 +23,7 @@ export default function Allcity() {
 
 
   // const [cities, setCities] = useState([])
-  const URL = api + '/cities?city='
+  // const URL = api + '/cities?city='
   const searchInput = useRef()
   // const [value, setValue] = useState("")
   const searchValue = () => {
