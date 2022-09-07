@@ -10,6 +10,7 @@ import WebsiteLayouts from './layouts/WebsiteLayouts';
 import ScrollToTop from './components/ScrollToTop';
 import EditCity from './pages/EditCity';
 import City from './pages/City'
+import MyTineraries from './pages/MyTineraries'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path='/city/:id'   element={<City/>}/>
         <Route path='/newcity' element={<NewCity />} />
         <Route path='/editcity' element={<EditCity />} />
+        <Route path='/mytineraries' element={<MyTineraries/>}/>
       </Routes>
       </WebsiteLayouts>
     </BrowserRouter>
