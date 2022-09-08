@@ -1,6 +1,7 @@
 import '../styles/Itinerary.css'
 import axios from "axios"
 import { useEffect, useState } from 'react'
+import Activities from "./Activities"
 // import { useParams } from 'react-router-dom'
 
 export default function Itinerary(props) {
@@ -14,7 +15,7 @@ export default function Itinerary(props) {
             .then(response => setItinerary(response.data.response))
     }, [id])
 
-    console.log(itineraries)
+    // console.log(itineraries)
 
     const showItineraries = (itineraries) => {
         return (
@@ -30,7 +31,10 @@ export default function Itinerary(props) {
                                 <img className="Itinerary-ImgUser" src={itineraries.user.photo} />
                                 <p className="Itinerary-UserName"> By {itineraries.user.name}</p>
                             </div>
-                            <div className="Itinerary-ActivitiesContainer"></div>
+                            <div className="Itinerary-ActivitiesContainer">
+                                <h3 className="Itinerary-ActivityTitle">Activities:</h3>
+                                <Activities data={itineraries} />
+                            </div>
                         </div>
                         <div className="Itinerary-CommentsContainer"></div>
                     </div>

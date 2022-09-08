@@ -1,5 +1,11 @@
+.Itinerary{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .Itinerary-Container{
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,6 +28,10 @@
     font-weight: 700;
     font-size: 24px;
 }
+.Itinerary-ActivityTitle{
+    font-weight: 700;
+    font-size: 20px;
+}
 
 .Itinerary-User{
     display: flex;
@@ -41,21 +51,15 @@
 }
 
 @media (min-width: 768px) {
-    .Itinerary{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
     .Itinerary-Container{
-        width: 96%;
+        width: 80%;
         flex-direction: row;
         align-items: flex-start;
         padding: 20px 0;
-        gap: 10px;
+        gap: 30px;
     }
     .Itinerary-ImgContainer{
-    width: 40%;
+    width: 280px;
     height: 260px;
     }
     .Itinerary-Img{
@@ -64,10 +68,10 @@
     }
 }
 @media (min-width: 1024px) {
-    .Itinerary-Container{
-        width: 80%;
-    }
-
+    .Itinerary-ImgContainer{
+        width: 40%;
+        height: 260px;
+        }
 }
 @media (min-width: 1440px) {
     .Itinerary-Container{
