@@ -13,17 +13,17 @@ const citiesApi = createApi({
     endpoints: (builder) => ({
         getAllCities: builder.query({
             query: (searchValue) => "/cities?city=" + searchValue
+        }),
+        postNewCity: builder.mutation({
+            query: (newCity) => ({
+                url: '/cities',
+                method: 'POST',
+                body: newCity,
+            }),
         })
-    }),
-
-    // endpoints: (builder) => ({
-    //     getFilCities: builder.query ({
-    //         query: () => "/cities?city="
-    //     })
-    // })
+    })
 })
 
 
 export default citiesApi
-export const { useGetAllCitiesQuery } = citiesApi
-// export const {useGetFilCities} = citiesApi
+export const { useGetAllCitiesQuery, usePostNewCityMutation } = citiesApi
