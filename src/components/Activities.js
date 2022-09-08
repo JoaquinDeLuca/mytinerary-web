@@ -15,7 +15,7 @@ export default function Activities(props) {
             .then(response => setActivity(response.data.response))
     }, [id])
 
-    console.log(activities)
+    // console.log(activities)
 
     const showActivities = (activities) => {
         return (
