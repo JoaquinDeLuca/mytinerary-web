@@ -2,13 +2,14 @@ import '../styles/Itinerary.css'
 import axios from "axios"
 import { useEffect, useState } from 'react'
 import Activities from "./Activities"
+import Comments from "./Comments"
 // import { useParams } from 'react-router-dom'
 
 export default function Itinerary(props) {
 
     const id = props.data._id
     const [itineraries, setItinerary] = useState([])
-
+ 
 
     useEffect(() => {
         axios.get(`http://localhost:4000/itineraries/city/${id}`)
@@ -18,7 +19,11 @@ export default function Itinerary(props) {
     // console.log(itineraries)
 
     const showItineraries = (itineraries) => {
+     
+    
         return (
+            <>
+
             <div className="Itinerary-Container">
                 <div className="Itinerary-ImgContainer">
                     <img className="Itinerary-Img" src={itineraries.city.photo} />
@@ -36,10 +41,11 @@ export default function Itinerary(props) {
                                 <Activities data={itineraries} />
                             </div>
                         </div>
-                        <div className="Itinerary-CommentsContainer"></div>
                     </div>
                 </div>
             </div>
+            <Comments data={itineraries}/>
+            </>
         )
     }
 
