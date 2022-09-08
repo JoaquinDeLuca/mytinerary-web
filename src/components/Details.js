@@ -40,7 +40,8 @@ export default function Details() {
               <h2 className="Details-h2">{city.city}</h2>
               <p className='Details-p'>Country: {city.country} </p>
               <p className='Details-p'>population: {city.population} </p>
-              <p className='Details-p'>Fundation: {city.fundation} </p>
+              {/* <p className='Details-p'>Fundation: {city.fundation} </p> */}
+              <LinkRouter className='Details-boton' to={'/editcity/'+ id}>Edit City</LinkRouter>
             </div>
           </div>
         </div>
