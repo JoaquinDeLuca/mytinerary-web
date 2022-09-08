@@ -37,6 +37,45 @@
     margin-bottom: 2px;
 }
 
+.Details-boton{
+    padding: 0.2rem 0.7rem;
+    margin: 0.2rem;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+    border-radius: 7px;
+}
+
+.Details-boton::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+.Details-boton:hover::before {
+    transform: translateX(0);
+}
+.Details-boton:hover{
+    color:white;
+}
+
+
+
 @media (min-width: 600px) {
     .Details-container{
         display: flex;
