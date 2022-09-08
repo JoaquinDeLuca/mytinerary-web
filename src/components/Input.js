@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import '../styles/Input.css'
-import api from '../api'
+import { usePostNewCityMutation } from '../features/citiesApi'
 
 export default function Input() {
+
+    const [PostNew] = usePostNewCityMutation()
 
     const datosInicial ={
         city: "",
@@ -22,9 +23,11 @@ export default function Input() {
 
     }
 
+    
+
     const saveData = async(e)=>{
         e.preventDefault();
-        console.log(city);
+        // console.log(city);
 
         const newCity = {
             city: city.city,
@@ -35,12 +38,14 @@ export default function Input() {
             information: city.information
         }
 
-        await axios.post(api + '/cities/' , newCity)
-
+        PostNew(newCity)
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
+        
         setCity({...datosInicial})
         e.target.reset()
     }
-
+    
     
 
   return (
