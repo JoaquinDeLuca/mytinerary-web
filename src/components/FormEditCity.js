@@ -78,7 +78,7 @@ useEffect(()=>{
             <input className='FormEditCity-input' type="text" name="photo" placeholder='URL Photo' value={city.photo} required onChange={capturoData}/>
             <input className='FormEditCity-input' type="number" name="population" placeholder='Population' value={city.population} required onChange={capturoData}/>
             {/* <input className='FormEditCity-input' type="text" name="fundation" placeholder='Fundation' value={city.fundation} required onChange={capturoData}/> */}
-            <textarea className='FormEditCity-input' type="text" name="information" placeholder='Information' value={city.information} required onChange={capturoData}/>
+            <textarea className='FormEditCity-textarea ' type="text" name="information" placeholder='Information' value={city.information} required onChange={capturoData}/>
             <button className='FormEditCity-button'>Send</button>
         </form>
       </div>
