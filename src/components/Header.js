@@ -9,6 +9,7 @@ const pages = [
     { name: 'Home', to: '/' },
     { name: 'Cities', to: '/cities' },
     { name: 'New City', to: '/newcity' },
+    { name: 'MyTinerary', to: '*' }
 ]
 
 
@@ -19,7 +20,7 @@ export default function Header() {
     const toggleMenu = () => {
         setMenu(!menu)
     }
-    const link = (page) => <li onClick={toggleMenu}><LinkRouter className='Header-link' to={page.to}>{page.name}</LinkRouter></li>
+    const link = (page) => <li onClick={toggleMenu}><LinkRouter className='Header-link' id={page.name} to={page.to}>{page.name}</LinkRouter></li>
 
     const HandleOpen = () => {
         if (open) {
