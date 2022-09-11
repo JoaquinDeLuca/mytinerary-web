@@ -1,18 +1,37 @@
-
-.Welcome-conatiner{
-    display: flex;
-    flex-direction: column;
-    justify-content: center ;
-    align-items: center;
-    height: 80vh;
-    overflow: hidden;
-    position: relative;
+@font-face {
+    font-family: "Brighten";
+    src: url("../assets/fonts/Brighten.otf");
+}
+@font-face {
+    font-family: "TallX";
+    src: url("../assets/fonts/MKSansserifLightTallX.ttf");
+}
+@font-face {
+    font-family: "Refrigerator";
+    src: url("../assets/fonts/RefrigeratorDeluxe.otf");
 }
 
-.Welcome-background{
-    width: 200vh;
-    opacity: .2;
+
+.Welcome-conatiner{
+    position: relative;
+    width: 100%;
+    height: 86vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Welcome-conatiner img{
     position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.Parallax-sol{
+    transform: perspective(10);
 }
 
 .Welcome-text{
@@ -22,19 +41,40 @@
     justify-content: center ;
     align-items: center;
     flex-wrap: wrap;
-    padding: 4rem;
+    padding: 0;
+    top: 1rem;
 }
 
+.Welcome-trips{
+    font-size: 40px;
+    font-family: "Brighten";
+    text-transform: uppercase;
+    position: relative;
+    top: 2rem;
+    color: #33141C;
+}
 .Welcome-title{
-    font-size: 110px;
+    font-size: 160px;
     font-weight: 700;
+    font-family: "Refrigerator";
+    text-transform: uppercase;
+    margin: 0;
+    color: #33141C;
+
 }
 
 .Welcome-slogan{
-    font-size: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "TallX";
+    text-transform: uppercase;
+    width: 36rem;
+    text-align: center;
+    color: #33141C;
+
 }
 
-@media screen and (max-width:782px){
+/* @media screen and (max-width:782px){
     .Welcome-title{
         font-size: 18vw;
     }
@@ -42,4 +82,4 @@
     .Welcome-slogan{
         font-size: 6vw;
     }
-}
+} */
