@@ -19,6 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .Welcome-conatiner img{
@@ -74,12 +75,27 @@
 
 }
 
-/* @media screen and (max-width:782px){
+@media screen and (max-width:598px){
+    
     .Welcome-title{
         font-size: 18vw;
     }
     
     .Welcome-slogan{
         font-size: 6vw;
+        width: 96%;
     }
-} */
+    .Welcome-trips{
+        top: 10px;
+        color: #33141C;
+        font-weight: 700;
+    }
+    .Welcome-text{
+        padding: 0;
+        top: 6rem;
+    }
+    .Welcome-conatiner img{
+        width: 200%;
+        object-fit:initial;
+    }
+}
