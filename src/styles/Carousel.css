@@ -38,10 +38,16 @@
     margin: 20px 0px;
     font-size: 30px;
     font-weight: 500;
+    text-decoration: none;
+    color: black;
+    
 }
 .Carousel-box{
     height: 33vh;
     width: 30vw;
+}
+a{
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {
