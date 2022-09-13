@@ -46,12 +46,12 @@ export default function SingUpInput() {
   return (
     <div className="Singup-container">
         <form className="Singup-form" onSubmit={saveData}>
-            <input onChange={captureData} name="name"      className="Singup-input" placeholder="Name"/>
-            <input onChange={captureData} name="lastName"  className="Singup-input" placeholder="LastName"/>
-            <input onChange={captureData} name="mail"      className="Singup-input" placeholder="Mail"/>
-            <input onChange={captureData} name="password"  className="Singup-input" placeholder="Password"/>
-            <input onChange={captureData} name="photo"     className="Singup-input" placeholder="Photo URL"/>
-            <input onChange={captureData} name="country"   className="Singup-input" placeholder="Conuntry"/>
+            <input onChange={captureData} name="name"      className="Singup-input" placeholder="Name" required/>
+            <input onChange={captureData} name="lastName"  className="Singup-input" placeholder="LastName" required/>
+            <input onChange={captureData} name="mail"      className="Singup-input" placeholder="Mail" required/>
+            <input onChange={captureData} name="password"  className="Singup-input" placeholder="Password" required/>
+            <input onChange={captureData} name="photo"     className="Singup-input" placeholder="Photo URL" required/>
+            <input onChange={captureData} name="country"   className="Singup-input" placeholder="Conuntry" required/>
             <button className="Singup-btn">Sign Up</button>
         </form>
     </div>
