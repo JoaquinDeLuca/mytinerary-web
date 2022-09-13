@@ -46,10 +46,9 @@ export default function Header() {
                         {
                             open
                                 ? <ul className='Header-profileMenu'>
-                                    <LinkRouter to="/singup">
-                                        <li className='Header-li' onClick={HandleOpen} >Sign up</li>
-                                    </LinkRouter>
-                                    <li className='Header-li' onClick={HandleOpen} >Sign in</li>
+                                    <LinkRouter to="/singup"><li className='Header-li' onClick={HandleOpen} >Sign up</li></LinkRouter>
+                                    
+                                    <LinkRouter to='/singin'><li className='Header-li' onClick={HandleOpen} >Sign in</li></LinkRouter>
                                 </ul>
                                 : null
                         }
