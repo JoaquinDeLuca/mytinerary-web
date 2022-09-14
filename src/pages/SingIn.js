@@ -1,11 +1,13 @@
 import SingInForm from '../components/SingInForm'
-import SingUpGoogle from "../components/SingUpGoogle"
+import SingInGoogle from "../components/SingInGoogle"
+import SingInPages from '../styles/SingInPages.css'
 
 export default function SingIn() {
   return (
-    <>
+    <div className='container'>
+      
         <SingInForm /> 
-        <SingUpGoogle />
-    </>
+        <SingInGoogle />
+    </div>
   )
 }
