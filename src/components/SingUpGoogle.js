@@ -1,8 +1,10 @@
 import * as jose from 'jose'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { usePostUserMutation } from '../features/userApi'
 
 export default function SingUpGoogle() {
+
+    const [user, setUser] = useState(0)
 
     let [newUser] = usePostUserMutation()
 
@@ -22,8 +24,12 @@ export default function SingUpGoogle() {
             role:'user', 
             from:'google'
         }
+
         newUser(data)
-    }
+        setUser(data)
+      }
+      // console.log(user)
+      localStorage.setItem('useriInfo', JSON.stringify(user))
 
     useEffect(() =>{
         /* global google */
