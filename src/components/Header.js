@@ -4,6 +4,7 @@ import acceso from "../img/acceso.png";
 import logo3 from "../img/logo3.png";
 import lista from "../img/lista.png";
 import { useState } from "react";
+import { usePostUserSingOutMutation } from "../features/userApi";
 
 const pages = [
   { name: "Home", to: "/" },
@@ -12,8 +13,12 @@ const pages = [
 ];
 
 export default function Header() {
+
+
   const [menu, setMenu] = useState(false);
   const [open, setOpen] = useState(false);
+  const [singOut] = usePostUserSingOutMutation()
+
 
   const toggleMenu = () => {
     setMenu(!menu);
@@ -35,6 +40,7 @@ export default function Header() {
   };
 
   let User = JSON.parse(localStorage.getItem("useriInfo"));
+  // console.log(User.mail)
 
   const userlogged = (usuario) => {
     if (!usuario) {
@@ -77,6 +83,8 @@ export default function Header() {
   };
 
   const clearlocal = () => {
+    singOut(User.mail)
+    // .then( response => console.log(response))
     localStorage.clear();
   };
 
