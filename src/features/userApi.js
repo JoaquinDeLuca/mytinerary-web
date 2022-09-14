@@ -16,9 +16,16 @@ const userApi = createApi ({
                 method: 'POST',
                 body: dataNewUser,
             }),
+        }),
+        postUserSingIn: builder.mutation({
+            query: (user) => ({
+                url: '/auth/signin',
+                method: 'POST',
+                body: user,
+            }),
         })
     })
 })
 
 export default userApi
-export const { usePostUserMutation } = userApi
+export const { usePostUserMutation, usePostUserSingInMutation } = userApi
