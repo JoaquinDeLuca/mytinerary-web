@@ -14,6 +14,9 @@ const citiesApi = createApi({
         getAllCities: builder.query({
             query: (searchValue) => "/cities?city=" + searchValue
         }),
+        getCityById: builder.query({
+            query: (id) => `/cities/${id}`
+        }),
         postNewCity: builder.mutation({
             query: (newCity) => ({
                 url: '/cities',
@@ -26,4 +29,4 @@ const citiesApi = createApi({
 
 
 export default citiesApi
-export const { useGetAllCitiesQuery, usePostNewCityMutation } = citiesApi
+export const { useGetAllCitiesQuery, usePostNewCityMutation, useGetCityByIdQuery } = citiesApi
