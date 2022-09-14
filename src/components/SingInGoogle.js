@@ -1,10 +1,12 @@
 import * as jose from 'jose'
 import { useEffect, useRef, useState } from 'react'
-import { usePostUserMutation } from '../features/userApi'
+import { usePostUserSingInMutation } from '../features/userApi'
 
-export default function SingUpGoogle() {
+export default function SingInGoogle() {
 
-    let [newUser] = usePostUserMutation()
+    const [user, setUser] = useState(0)
+
+    let [newUser] = usePostUserSingInMutation()
 
     const buttonDiv = useRef(null)
     // console.log(buttonDiv.current) 
@@ -13,23 +15,20 @@ export default function SingUpGoogle() {
        let userObject = jose.decodeJwt(response.credential)
 
         const data = {
-            name: userObject.given_name, 
-            lastName: userObject.family_name, 
             mail: userObject.email, 
             password: userObject.sub, 
-            photo: userObject.picture, 
-            country: 'Argentina', 
-            role:'user', 
             from:'google'
         }
 
         newUser(data)
+        // .then(response => console.log(response))
+        
+        setUser(localStorage.setItem('useriInfo', JSON.stringify(data)))
+        
 
-        window.location.replace('/singin')
-
+        window.location.replace('/')
       }
       // console.log(user)
- 
 
     useEffect(() =>{
         /* global google */
