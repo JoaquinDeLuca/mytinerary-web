@@ -143,7 +143,17 @@ header{
 .Header-li:hover{
     color: #fe948c;
 }
-
+.Header-signOut{
+    border: none;
+    padding: none;
+    background: none;
+}
+.Header-loginphoto{
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
 @media screen and (max-width:782px){
     header{
         padding: 1.5rem 2.5rem;

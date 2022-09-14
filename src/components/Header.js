@@ -35,7 +35,6 @@ export default function Header() {
   };
 
   let User = JSON.parse(localStorage.getItem("useriInfo"));
-  // console.log(User)
 
   const userlogged = (usuario) => {
     if (!usuario) {
