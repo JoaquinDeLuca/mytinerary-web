@@ -4,8 +4,6 @@ import { usePostUserMutation } from '../features/userApi'
 
 export default function SingUpGoogle() {
 
-    const [user, setUser] = useState(0)
-
     let [newUser] = usePostUserMutation()
 
     const buttonDiv = useRef(null)
@@ -26,10 +24,12 @@ export default function SingUpGoogle() {
         }
 
         newUser(data)
-        setUser(data)
+
+        window.location.replace('/singin')
+
       }
       // console.log(user)
-      localStorage.setItem('useriInfo', JSON.stringify(user))
+ 
 
     useEffect(() =>{
         /* global google */

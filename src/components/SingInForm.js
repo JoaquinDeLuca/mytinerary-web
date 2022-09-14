@@ -1,7 +1,6 @@
 import '../styles/SingInForm.css'
 import {  useState } from 'react'
 import { usePostUserSingInMutation } from '../features/userApi'
-import { Link as LinkRouter } from 'react-router-dom'
 
 export default function SingInForm() {
 
@@ -29,20 +28,19 @@ export default function SingInForm() {
       password: login.password,
       form: login.form
     }
-    console.log(userData)
+    // console.log(userData)
 
     userLogin(userData)
-    .then( Response => setUserLS((Response.data.response.user)))
-  
+    // .then( Response => console.log((Response.data.response.user)))
+
+    setUserLS(localStorage.setItem('useriInfo', JSON.stringify(userData)))
+
     event.target.reset()
 
-    // window.location.replace('http://localhost:3000/')
+    window.location.replace('/')
   }
-  console.log(userLS)
 
-  localStorage.setItem('useriInfo', JSON.stringify(userLS))
-
-
+  
   return (
     <div className='SingInForm-container'>
       <form onSubmit={saveData} className='SingInForm-form'>
