@@ -25,9 +25,7 @@ export default function Header() {
   };
   const link = (page) => (
     <li onClick={toggleMenu}>
-      <LinkRouter className="Header-link" to={page.to}>
-        {page.name}
-      </LinkRouter>
+      <LinkRouter className="Header-link" to={page.to}>{page.name}</LinkRouter>
     </li>
   );
 
@@ -36,6 +34,7 @@ export default function Header() {
       setOpen(false);
     } else {
       setOpen(true);
+
     }
   };
 
@@ -64,12 +63,17 @@ export default function Header() {
       return (
         <div>
           <div className="Header-menu">
-            {open ? (
+            {open && User.role === 'admin' ? (
               <ul className="Header-profileMenu">
                 <button onClick={clearlocal} className="Header-signOut">
-                  <li className="Header-li" onClick={HandleOpen}>
-                    Sign Out
-                  </li>
+                  <li className="Header-li" onClick={HandleOpen}>Sign Out</li>
+                </button>
+                <LinkRouter to={'/newadmin'}> <li className="Header-li" onClick={HandleOpen}>New Admin</li> </LinkRouter>
+              </ul>
+            ) : open && User.role === 'user' ? (
+                <ul className="Header-profileMenu">
+                <button onClick={clearlocal} className="Header-signOut">
+                  <li className="Header-li" onClick={HandleOpen}>Sign Out</li>
                 </button>
               </ul>
             ) : null}
