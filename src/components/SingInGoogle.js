@@ -15,18 +15,19 @@ export default function SingInGoogle() {
        let userObject = jose.decodeJwt(response.credential)
 
         const data = {
-            mail: userObject.email, 
-            password: userObject.sub, 
-            from:'google'
+          mail: userObject.email, 
+          password: userObject.sub, 
+          from:'google',
+          id: userObject._id,
         }
 
         newUser(data)
-        // .then(response => console.log(response))
+        .then(response =>  setUser(localStorage.setItem('useriInfo', JSON.stringify(response.data.response.user))))
         
-        setUser(localStorage.setItem('useriInfo', JSON.stringify(data)))
+       
         
 
-        window.location.replace('/')
+        // window.location.replace('/')
       }
       // console.log(user)
 
