@@ -29,9 +29,15 @@ const userApi = createApi ({
                 url: `/auth/signout/${mail}`,
                 method: 'PUT'
             }),
+        }),
+        getUserId: builder.mutation({
+            query: (id) => ({
+                url: `/auth/${id}`,
+                method: 'GET'
+            }),
         })
     })
 })
 
 export default userApi
-export const { usePostUserMutation, usePostUserSingInMutation, usePostUserSingOutMutation } = userApi
+export const { usePostUserMutation, usePostUserSingInMutation, usePostUserSingOutMutation, useGetUserIdMutation } = userApi
