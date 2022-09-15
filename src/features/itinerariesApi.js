@@ -23,10 +23,24 @@ const itinerariesApi = createApi({
                 method: 'GET'
             }),
             transformResponse: (response)=> response.response
+        }),
+        deleteItinerary : builder.query({
+            query: (id) => ({
+                url: `itineraries/${id}`,
+                method: 'DELETE'
+            }),
+            transformResponse: (response)=> response.response
+        }),
+        idItinerary : builder.query({
+            query: (id) => ({
+                url: `itineraries/${id}`,
+                method: 'GET'
+            }),
+            transformResponse: (response)=> response.response
         }) 
     })
 
 })  
 
 export default itinerariesApi
-export const { useGetItinerariesQuery , getItinerariesByUser } = itinerariesApi
+export const { useGetItinerariesQuery , useGetItinerariesByUserQuery, useDeleteItineraryQuery, useIdItineraryQuery } = itinerariesApi
