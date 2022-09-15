@@ -3,7 +3,7 @@ import "../styles/Header.css";
 import acceso from "../img/acceso.png";
 import logo3 from "../img/logo3.png";
 import lista from "../img/lista.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePostUserSingOutMutation } from "../features/userApi";
 
 const pages = [
@@ -17,6 +17,7 @@ export default function Header() {
 
   const [menu, setMenu] = useState(false);
   const [open, setOpen] = useState(false);
+  const [img, setImg] = useState()
   const [singOut] = usePostUserSingOutMutation()
 
 
@@ -73,13 +74,16 @@ export default function Header() {
             ) : open && User.role === 'user' ? (
                 <ul className="Header-profileMenu">
                 <button onClick={clearlocal} className="Header-signOut">
-                  <li className="Header-li" onClick={HandleOpen}>Sign Out</li>
+                      
+                  <li className="Header-li" onClick={HandleOpen}>Sign Out</li> 
+
                 </button>
               </ul>
             ) : null}
           </div>
           <button className="Header-button" onClick={HandleOpen}>
             <img className="Header-loginphoto" src={usuario.photo} alt="acceso"/>
+            <p>{usuario.name}</p>
           </button>
         </div>
       );
@@ -90,6 +94,7 @@ export default function Header() {
     singOut(User.mail)
     // .then( response => console.log(response))
     localStorage.clear();
+    window.location.reload(true)
   };
 
   return (
