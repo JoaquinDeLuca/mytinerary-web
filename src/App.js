@@ -13,6 +13,7 @@ import City from './pages/City'
 import MyTineraries from './pages/MyTineraries'
 import Singup from './pages/Singup';
 import SingIn from './pages/SingIn';
+import EditInerary from './pages/EditInerary';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/singup' element={<Singup />} />
         <Route path='/singin' element={<SingIn />}/>
+        <Route path='/itineraries/:id' element={<EditInerary/> }/>
         {/* <Route path='*' element={<UnderConstruction />} /> */}
         <Route path='/cities' element={<Cities/>} />
         <Route path='/city/:id'   element={<City/>}/>
