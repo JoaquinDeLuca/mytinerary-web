@@ -1,12 +1,11 @@
 import * as jose from 'jose'
 import { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { usePostUserSingInMutation } from '../features/userApi'
 
 export default function SingInGoogle() {
 
     const [user, setUser] = useState(0)
-    const navigate = useNavigate()
+
 
     let [newUser] = usePostUserSingInMutation()
 
@@ -27,10 +26,7 @@ export default function SingInGoogle() {
         newUser(data)
         .then(response =>  setUser(localStorage.setItem('useriInfo', JSON.stringify(response.data.response.user))))
         
-       
-        
-        navigate('/')
-        // window.location.replace('/')
+        window.location.replace('/')
       }
       // console.log(user)
 
