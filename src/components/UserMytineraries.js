@@ -1,9 +1,11 @@
 import axios from "axios"
 import { useGetItinerariesByUserQuery } from '../features/itinerariesApi'
 import { useState } from "react"
-import { Link as LinkRouter } from 'react-router-dom'
+import { Link as LinkRouter, useNavigate } from 'react-router-dom'
 
 export default function UserMytineraries() {
+
+    const navigate = useNavigate()
 
     let user = JSON.parse(localStorage.getItem('useriInfo'))
     const [reload, setReoload] = useState(false)
@@ -63,8 +65,10 @@ export default function UserMytineraries() {
                 <p>City: {itinera.city.city}</p>
                 <p>Name: {itinera.name}</p>
                 <p>Duration: {itinera.duration} days</p>
-                <LinkRouter to={`/itineraries/${itinera._id}`}>Edit</LinkRouter>
-                <button  onClick={ () => deleteItinerary(itinera._id)}>Delete</button>
+                <div className="container-btn">
+                <LinkRouter className="buttom-link" to={`/itineraries/${itinera._id}`}>Edit</LinkRouter>
+                <button className="buttom"  onClick={ () => deleteItinerary(itinera._id)}>Delete</button>
+                </div>
             </div>
 
         )
@@ -90,10 +94,10 @@ export default function UserMytineraries() {
     } = useGetItinerariesByUserQuery(user.id)
     console.log(itinerary)
     
-
+    
   return (
     <div>
-        <button className='MyTineraries-btn'>Back</button>
+        <LinkRouter to='/'><button className='MyTineraries-btn'>Back</button></LinkRouter>
         <h2 className='MyTineraries-h2'>MyTineraries</h2>
         <div className='MyTineraries-container'>
         <h4 className='MyTineraries-h4'>User: {user.name}</h4>
