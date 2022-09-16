@@ -2,28 +2,28 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import api from '../api'
 
 
-const citiesApi = createApi ({
+const citiesApi = createApi({
     reducerPath: "citiesApi",
 
 
-    baseQuery: fetchBaseQuery({ 
+    baseQuery: fetchBaseQuery({
         baseUrl: api
     }),
 
     endpoints: (builder) => ({
         getAllCities: builder.query({
-            query: () => "/cities?city="
+            query: (searchValue) => "/cities?city=" + searchValue
+        }),
+        postNewCity: builder.mutation({
+            query: (newCity) => ({
+                url: '/cities',
+                method: 'POST',
+                body: newCity,
+            }),
         })
-    }),
-
-    // endpoints: (builder) => ({
-    //     getFilCities: builder.query ({
-    //         query: () => "/cities?city="
-    //     })
-    // })
+    })
 })
 
 
 export default citiesApi
-export const {useGetAllCitiesQuery} = citiesApi
-// export const {useGetFilCities} = citiesApi
+export const { useGetAllCitiesQuery, usePostNewCityMutation } = citiesApi
