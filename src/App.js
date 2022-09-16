@@ -13,21 +13,46 @@ import City from './pages/City'
 import MyTineraries from './pages/MyTineraries'
 import Singup from './pages/Singup';
 import SingIn from './pages/SingIn';
+import EditInerary from './pages/EditInerary';
+import NewAdmin from './pages/NewAdmin';
+import { useEffect, useState } from 'react';
+import { useGetUserIdMutation } from './features/userApi';
+
 
 function App() {
+
+  const [logged, setLogged] = useState()
+  const [dataUser] = useGetUserIdMutation()
+
+
+  console.log(logged)
+  let user = JSON.parse(localStorage.getItem('useriInfo'))
+  
+  useEffect(()=>{
+    if(user){
+      dataUser(user.id)
+      .then(response => setLogged(response.data.response.logged))
+    }else {
+      setLogged(false)
+    }
+  },[])
+
+
   return (
     <BrowserRouter>
     <ScrollToTop />
       <WebsiteLayouts>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/singup' element={<Singup />} />
-        <Route path='/singin' element={<SingIn />}/>
+        <Route path='/singup' element={logged ? <Home/> : <Singup />} />
+        <Route path='/singin' element={logged ? <Home/> : <SingIn />}/>
+        <Route path='/newadmin' element={logged && user.role === 'admin' ? <NewAdmin /> : <Home/>}/>
+        <Route path='/itineraries/:id' element={<EditInerary/> }/>
         {/* <Route path='*' element={<UnderConstruction />} /> */}
         <Route path='/cities' element={<Cities/>} />
         <Route path='/city/:id'   element={<City/>}/>
         <Route path='/newcity' element={<NewCity />} />
-        <Route path='/editcity/:id' element={<EditCity />} />
+        <Route path='/editcity/:id' element={logged === false ? <Singup/>  :<EditCity /> } />
         <Route path='/mytineraries' element={<MyTineraries/>}/>
       </Routes>
       </WebsiteLayouts>

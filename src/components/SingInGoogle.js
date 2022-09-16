@@ -6,6 +6,7 @@ export default function SingInGoogle() {
 
     const [user, setUser] = useState(0)
 
+
     let [newUser] = usePostUserSingInMutation()
 
     const buttonDiv = useRef(null)
@@ -15,17 +16,16 @@ export default function SingInGoogle() {
        let userObject = jose.decodeJwt(response.credential)
 
         const data = {
-            mail: userObject.email, 
-            password: userObject.sub, 
-            from:'google'
+          mail: userObject.email, 
+          password: userObject.sub, 
+          from:'google',
+          id: userObject._id,
+          role: userObject.role
         }
 
         newUser(data)
-        // .then(response => console.log(response))
+        .then(response =>  setUser(localStorage.setItem('useriInfo', JSON.stringify(response.data.response.user))))
         
-        setUser(localStorage.setItem('useriInfo', JSON.stringify(data)))
-        
-
         window.location.replace('/')
       }
       // console.log(user)

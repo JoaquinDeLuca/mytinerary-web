@@ -11,7 +11,8 @@ export default function SingInForm() {
   const [login, setLogin] = useState({
     mail:"",
     password:"",
-    form:"form"
+    form:"form",
+    role:""
   })
 
   const captureData = (event) => {
@@ -26,14 +27,13 @@ export default function SingInForm() {
     const userData = {
       mail: login.mail,
       password: login.password,
-      form: login.form
+      form: login.form,
+      role: login.role
     }
     // console.log(userData)
 
     userLogin(userData)
-    // .then( Response => console.log((Response.data.response.user)))
-
-    setUserLS(localStorage.setItem('useriInfo', JSON.stringify(userData)))
+    .then( Response => setUserLS(localStorage.setItem('useriInfo', JSON.stringify(Response.data.response.user))))
 
     event.target.reset()
 
