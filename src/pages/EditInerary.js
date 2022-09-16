@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 import api from "../api"
 import { useIdItineraryQuery } from "../features/itinerariesApi"
+import '../styles/EditInerary.css'
 
 
 
@@ -14,7 +15,7 @@ export default function EditInerary() {
         data: Itinerary,
         
     } = useIdItineraryQuery(id)
-    console.log(Itinerary)
+    // console.log(Itinerary)
 
     const editInicial = {
         name:"",
@@ -38,7 +39,7 @@ export default function EditInerary() {
 
         await axios.put(api+`/itineraries/${id}`,editItnerary)
 
-        console.log(editItnerary)
+        // console.log(editItnerary)
 
         event.target.reset()
 
@@ -47,11 +48,13 @@ export default function EditInerary() {
 
   return (
     <>
-        <form onSubmit={saveData}>
-            <input name='name'  onChange={captureData}  placeholder='name'/>
-            <input name='duration' onChange={captureData} placeholder='duration'/>
-            <button>Send</button>
-        </form>
+        <div className="EditItinerary-conatiner">
+            <form className="EditItinerary-form" onSubmit={saveData}>
+                <input className="EditItinerary-input" name='name'  onChange={captureData}  placeholder='name'/>
+                <input className="EditItinerary-input" name='duration' onChange={captureData} placeholder='duration'/>
+                <button className="EditItinerary-btn">Send</button>
+            </form>
+        </div>
     </>
   )
 }
