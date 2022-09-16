@@ -54,7 +54,7 @@ function App() {
         <Route path='/newcity' element={<NewCity />} />
         <Route path='/editcity/:id' element={logged === false ? <Singup/>  :<EditCity /> } />
         <Route path='/mytineraries' element={<MyTineraries/>}/>
-        <Route path='/newitinerary' element={<UnderConstruction/>}/>
+        <Route path='/newitinerary'  element={<UnderConstruction/>}/>
       </Routes>
       </WebsiteLayouts>
     </BrowserRouter>
