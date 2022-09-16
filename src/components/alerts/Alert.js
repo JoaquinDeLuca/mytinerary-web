@@ -16,19 +16,15 @@ export default function Alert({ toastlist, setList }) {
             if (toastlist.length) {
                 deleteToast(toastlist[0].id);
             }
-        }, 4500);
+        }, 5000);
         return () => {
             clearInterval(interval);
         }
     }, [toastlist, deleteToast]);
 
-    console.log(list)
-
-
     return (
         <div>
             {list.map((toast, i) => (
-
                 <div className='Alert' key={i} style={{ backgroundColor: toast.backgroundColor }}>
                     <img className='Alert-icon' src={toast.icon} />
                     <div className='Alert-information' >

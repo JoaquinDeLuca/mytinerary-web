@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import '../styles/Input.css'
 import { usePostNewCityMutation } from '../features/citiesApi'
+import Alert from './alerts/Alert'
+import checkIcon from '../assets/icons/check.png'
+import errorIcon from '../assets/icons/exclamation.png'
 
 export default function Input() {
 
@@ -20,9 +23,36 @@ export default function Input() {
     const capturoData = (e)=>{
         const {name,value} = e.target
         setCity({...city, [name]: value})
-
     }
 
+    const [list, setList] = useState([])
+    let toastProperties = null
+
+    const showAlert = type => {
+        switch (type) {
+            case 'success':
+                toastProperties = {
+                    id: list.length + 1,
+                    title: 'Welcome',
+                    description: 'Successfully created a New City',
+                    backgroundColor: '#5cb85c',
+                    icon: checkIcon
+                }
+                break;
+            case 'error':
+                toastProperties = {
+                    id: list.length + 1,
+                    title: 'Try Again',
+                    description: 'Error creating New City',
+                    backgroundColor: '#d9534f',
+                    icon: errorIcon
+                }
+                break;
+            default:
+                toastProperties = [];
+        }
+        setList([...list, toastProperties])
+    }
     
 
     const saveData = async(e)=>{
@@ -39,11 +69,18 @@ export default function Input() {
         }
 
         PostNew(newCity)
-        .then(response => console.log(response))
-        .catch(error => console.log(error))
+        .then(response => {
+            if (response.data.success === true) {
+                showAlert('success')
+                window.location.replace('/cities')
+            }
+            else {
+                showAlert('error')
+                window.location.replace('/cities')
+            }
+        })
         
         setCity({...datosInicial})
-        e.target.reset()
     }
     
     
@@ -60,6 +97,7 @@ export default function Input() {
             <input className='Input-input' name="information" type="text" placeholder="information" value={city.information} onChange={capturoData} required />
             <button className='Input-button'>Send</button>
         </form>
+        <Alert toastlist={list} setList={setList} />
     </div>
   )
 }
