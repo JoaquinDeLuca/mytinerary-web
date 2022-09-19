@@ -100,6 +100,7 @@ export default function SingUpInput() {
 
     return (
         <div className="Singup-container">
+            <h2 className='signUp-h2'>Sign up now</h2>
             <form className="Singup-form" onSubmit={saveData}>
                 <input onChange={captureData} name="name" type='text' className="Singup-input" placeholder="Name" required />
                 <input onChange={captureData} name="lastName" type='text' className="Singup-input" placeholder="LastName" required />
