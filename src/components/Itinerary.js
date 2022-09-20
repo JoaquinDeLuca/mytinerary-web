@@ -1,25 +1,20 @@
 import '../styles/Itinerary.css'
-import axios from "axios"
-import { useEffect, useState } from 'react'
 import Activities from "./Activities"
 import Comments from "./Comments"
-// import { useParams } from 'react-router-dom'
+import { useGetItinerariesQuery } from '../features/itinerariesApi'
+
 
 export default function Itinerary(props) {
 
     const id = props.data._id
-    const [itineraries, setItinerary] = useState([])
  
-
-    useEffect(() => {
-        axios.get(`http://localhost:4000/itineraries/city/${id}`)
-            .then(response => setItinerary(response.data.response))
-    }, [id])
-
-    // console.log(itineraries)
-
+    const {
+        data: itineraries,
+        
+    } = useGetItinerariesQuery(id)
+    
     const showItineraries = (itineraries) => {
-     
+
     
         return (
             <>

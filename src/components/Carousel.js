@@ -48,7 +48,7 @@ export default function Carousel(props) {
     }
 
     const next = () => {
-        if (end < cities.length) {
+        if (end < limitSlides) {
             setStart(start + range)
             setEnd(end + range)
         } else {
