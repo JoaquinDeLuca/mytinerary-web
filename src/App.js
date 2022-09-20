@@ -53,8 +53,8 @@ function App() {
         <Route path='/city/:id'   element={<City/>}/>
         <Route path='/newcity' element={logged ? <NewCity /> : <Singup /> } />
         <Route path='/editcity/:id' element={logged === false ? <Singup/>  :<EditCity /> } />
-        <Route path='/mytineraries' element={<MyTineraries/>}/>
-        <Route path='/newitinerary'  element={<UnderConstruction/>}/>
+        <Route path='/mytineraries' element={logged ? <MyTineraries/> : <Singup />}/>
+        <Route path='/newitinerary'  element={logged ? <UnderConstruction/> : <Singup />}/>
       </Routes>
       </WebsiteLayouts>
     </BrowserRouter>
