@@ -51,7 +51,7 @@ function App() {
         {/* <Route path='*' element={<UnderConstruction />} /> */}
         <Route path='/cities' element={<Cities/>} />
         <Route path='/city/:id'   element={<City/>}/>
-        <Route path='/newcity' element={<NewCity />} />
+        <Route path='/newcity' element={logged ? <NewCity /> : <Singup /> } />
         <Route path='/editcity/:id' element={logged === false ? <Singup/>  :<EditCity /> } />
         <Route path='/mytineraries' element={<MyTineraries/>}/>
         <Route path='/newitinerary'  element={<UnderConstruction/>}/>
