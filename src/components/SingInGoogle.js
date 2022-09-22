@@ -1,6 +1,6 @@
 import * as jose from 'jose'
 import { useEffect, useRef, useState } from 'react'
-import { usePostUserSingInMutation } from '../features/userApi'
+import { usePostUserSingInMutation, useSignInTokenMutation } from '../features/userApi'
 import Alert from './alerts/Alert'
 import checkIcon from '../assets/icons/check.png'
 import errorIcon from '../assets/icons/exclamation.png'
@@ -38,8 +38,9 @@ export default function SingInGoogle() {
     setList([...list, toastProperties])
   }
 
-
+  // Mutation
   let [newUser] = usePostUserSingInMutation()
+  let [signInToken] = useSignInTokenMutation()
 
   const buttonDiv = useRef(null)
 
@@ -58,7 +59,10 @@ export default function SingInGoogle() {
       .then(response => {
         if (response.data.success === true) {
           showAlert('success')
-          setUser(localStorage.setItem('useriInfo', JSON.stringify(response.data.response.user)))
+          let ls = localStorage.setItem('token', response.data.response.token)
+          signInToken(ls)
+          // .then(response => console.log(response))
+
           window.location.replace('/')
         }
         else {
