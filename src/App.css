@@ -9,4 +9,11 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
+body::-webkit-scrollbar{
+  width: 8px;
+  background-color: rgb(235, 232, 232);
+}
+body::-webkit-scrollbar-thumb{
+  background: rgba(94, 94, 94, 0.587);
+  border-radius: 50px;
+}
