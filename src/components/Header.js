@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux';
 const pages = [
   { name: "Home", to: "/" },
   { name: "Cities", to: "/cities" },
-  { name: "New City", to: "/newcity" },
 ];
 
 export default function Header() {
@@ -65,17 +64,20 @@ export default function Header() {
           <div className="Header-menu">
             {open && user.role === 'admin' ? (
               <ul className="Header-profileMenu">
+                <LinkRouter to={'/myprofile'}> <li className="Header-li" onClick={HandleOpen}>My Profile</li> </LinkRouter>
+                <LinkRouter to={'/mytineraries'}> <li className="Header-li" onClick={HandleOpen}>My Tineraries</li> </LinkRouter>
+                <LinkRouter to={'/newadmin'}> <li className="Header-li" onClick={HandleOpen}>New Admin</li> </LinkRouter>
+                <LinkRouter to={'/newcity'}> <li className="Header-li" onClick={HandleOpen}>New City</li> </LinkRouter>
                 <button onClick={clearlocal} className="Header-signOut">
                   <li className="Header-li" onClick={HandleOpen}>Sign Out</li>
                 </button>
-                <LinkRouter to={'/newadmin'}> <li className="Header-li" onClick={HandleOpen}>New Admin</li> </LinkRouter>
               </ul>
             ) : open && user.role === 'user' ? (
-                <ul className="Header-profileMenu">
+              <ul className="Header-profileMenu">
+                <LinkRouter to={'/myprofile'}> <li className="Header-li" onClick={HandleOpen}>My Profile</li> </LinkRouter>
+                <LinkRouter to={'/mytineraries'}> <li className="Header-li" onClick={HandleOpen}>My Tineraries</li> </LinkRouter>
                 <button onClick={clearlocal} className="Header-signOut">
-                      
                   <li className="Header-li" onClick={HandleOpen}>Sign Out</li> 
-
                 </button>
               </ul>
             ) : null}
