@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import api from '../api'
 import { Link as LinkRouter } from 'react-router-dom'
 import Itinerary from './Itinerary'
+import { useSelector } from 'react-redux'
 
 export default function Details() {
 
@@ -12,6 +13,8 @@ export default function Details() {
   let { id } = useParams()
   // console.log(Este es: ${id})
 
+  const logged = useSelector(state => state.userr.logged)
+  const role = useSelector(state => state.userr.role)
   const [cities, setCities] = useState([])
 
   useEffect(() => {
@@ -19,7 +22,29 @@ export default function Details() {
       .then(response => setCities(response.data.response))
   }, [id])
 
-
+  const userlogic = () => {
+    if(logged){
+      if(role === "admin"){
+        return (
+          <>
+            <LinkRouter className='Details-boton' to={'/editcity/'+ id}>Edit City</LinkRouter>
+            <LinkRouter className='Details-boton' to={'/newitinerary/'+ id}>New Itinerary</LinkRouter>
+          </>
+        )
+      } else {
+        return (
+          <>
+            <LinkRouter className='Details-boton' to={'/newitinerary/'+ id}>New Itinerary</LinkRouter>
+          </>
+        )
+      }
+    } else {
+      return(
+        <>
+        </>
+      )
+    }
+  }
 
   const printDetails = (city) => {
     return (
@@ -41,8 +66,9 @@ export default function Details() {
               <p className='Details-p'>Country: {city.country} </p>
               <p className='Details-p'>population: {city.population} </p>
               {/* <p className='Details-p'>Fundation: {city.fundation} </p> */}
-              <LinkRouter className='Details-boton' to={'/editcity/'+ id}>Edit City</LinkRouter>
-              <LinkRouter className='Details-boton' to={'/newitinerary/'+ id}>New Itinerary</LinkRouter>
+              {/* <LinkRouter className='Details-boton' to={'/editcity/'+ id}>Edit City</LinkRouter>
+              <LinkRouter className='Details-boton' to={'/newitinerary/'+ id}>New Itinerary</LinkRouter> */}
+              {userlogic()}
             </div>
           </div>
         </div>
