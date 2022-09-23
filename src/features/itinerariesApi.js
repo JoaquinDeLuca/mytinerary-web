@@ -37,10 +37,23 @@ const itinerariesApi = createApi({
                 method: 'GET'
             }),
             transformResponse: (response)=> response.response
-        }) 
+        }),
+        likeAndDislike: builder.mutation({
+            query: (id) => ({
+                url:`itineraries/like/${id}`,
+                method: 'PATCH',
+                headers: {Authorization: `Bearer ${localStorage.getItem("token")}`}
+            })
+        })
     })
 
 })  
 
 export default itinerariesApi
-export const { useGetItinerariesQuery , useGetItinerariesByUserQuery, useDeleteItineraryQuery, useIdItineraryQuery } = itinerariesApi
+export const { 
+    useGetItinerariesQuery,
+    useGetItinerariesByUserQuery,
+    useDeleteItineraryQuery, 
+    useIdItineraryQuery,
+    useLikeAndDislikeMutation
+     } = itinerariesApi
