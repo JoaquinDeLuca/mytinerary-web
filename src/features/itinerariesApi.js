@@ -44,6 +44,13 @@ const itinerariesApi = createApi({
                 method: 'PATCH',
                 headers: {Authorization: `Bearer ${localStorage.getItem("token")}`}
             })
+        }),
+        postItinerary: builder.mutation({
+            query: (newitinerary) => ({
+                url: '/itineraries/',
+                method: 'POST',
+                body: newitinerary,
+            }),
         })
     })
 
@@ -55,5 +62,6 @@ export const {
     useGetItinerariesByUserQuery,
     useDeleteItineraryQuery, 
     useIdItineraryQuery,
-    useLikeAndDislikeMutation
+    useLikeAndDislikeMutation,
+    usePostItineraryMutation
      } = itinerariesApi

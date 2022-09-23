@@ -28,3 +28,25 @@
     overflow: hidden;
     text-align: center;
 }
+
+@media (max-width: 425px) {
+    .Activity-ContainerImg{
+        width: 60px;
+        height: 60px;
+    }
+    .Activity-Container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 70px;
+    }
+    .Activity-Title{
+        width: 70px;
+        font-size: 16px;
+        font-weight: 600;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        text-align: center;
+    }
+}

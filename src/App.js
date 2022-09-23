@@ -13,6 +13,9 @@ import Singup from './pages/Singup';
 import SingIn from './pages/SingIn';
 import EditInerary from './pages/EditInerary';
 import NewAdmin from './pages/NewAdmin';
+import UserAdmin from './pages/UserAdmin';
+import MyProfile from './pages/MyProfile';
+import NewItinerary from './pages/NewItinerary';
 // Import of hook 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react';
@@ -72,11 +75,11 @@ function App() {
         {/* <Route path='' element={<UnderConstruction />} */}
         <Route path='/cities' element={<Cities/>} />
         <Route path='/city/:id'   element={<City/>}/>
-        <Route path='/newcity' element={logged && user.role === 'admin' ? <NewCity /> : <UnderConstruction/>} />
-        <Route path='/editcity/:id' element={logged && user.role === 'admin' ? <EditCity /> :  <UnderConstruction/> } />
+        <Route path='/newcity' element={logged && user.role === 'admin' ? <NewCity /> : <UserAdmin />} />
+        <Route path='/editcity/:id' element={logged && user.role === 'admin' ? <EditCity /> :  <UserAdmin /> } />
         <Route path='/mytineraries' element={logged ? <MyTineraries/> : <Singup />}/>
-        {/* <Route path='/newitinerary/:id'  element={<NewItinerary />}/> */}
-        {/* <Route path='/myprofile'  element={<MyProfile />}/> */}
+        <Route path='/newitinerary/:id'  element={<NewItinerary />}/>
+        <Route path='/myprofile'  element={<MyProfile />}/>
       </Routes>
       </WebsiteLayouts>
     </BrowserRouter>
