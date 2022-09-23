@@ -101,11 +101,14 @@ header{
     right: 0;
 }
 .Header-profileMenu{
-    padding: 0.3rem 1rem;
-    margin: .5rem;
+    padding: 0.2rem 0.9rem;
+    margin: .3rem;
     font-size: 26px;
     border-radius: 8px;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .Header-li{
     padding: 0.3rem 1rem;

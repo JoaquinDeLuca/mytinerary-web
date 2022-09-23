@@ -5,19 +5,17 @@ import logo3 from "../img/logo3.png";
 import lista from "../img/lista.png";
 import { useEffect, useState } from "react";
 import { usePostUserSingOutMutation } from "../features/userApi";
+import { useSelector } from 'react-redux';
 
 const pages = [
   { name: "Home", to: "/" },
   { name: "Cities", to: "/cities" },
-  { name: "New City", to: "/newcity" },
 ];
 
 export default function Header() {
 
-
   const [menu, setMenu] = useState(false);
   const [open, setOpen] = useState(false);
-  const [img, setImg] = useState()
   const [singOut] = usePostUserSingOutMutation()
 
 
@@ -39,11 +37,11 @@ export default function Header() {
     }
   };
 
-  let User = JSON.parse(localStorage.getItem("useriInfo"));
-  // console.log(User.mail)
+  // useSelector( state => console.log(state.userr))
+  let user = useSelector( state => state.userr)
 
-  const userlogged = (usuario) => {
-    if (!usuario) {
+  const userlogged = (logged) => {
+    if (!logged) {
       return (
         <div>
           <div className="Header-menu">
@@ -64,26 +62,29 @@ export default function Header() {
       return (
         <div>
           <div className="Header-menu">
-            {open && User.role === 'admin' ? (
+            {open && user.role === 'admin' ? (
               <ul className="Header-profileMenu">
+                <LinkRouter to={'/myprofile'}> <li className="Header-li" onClick={HandleOpen}>My Profile</li> </LinkRouter>
+                <LinkRouter to={'/mytineraries'}> <li className="Header-li" onClick={HandleOpen}>My Tineraries</li> </LinkRouter>
+                <LinkRouter to={'/newadmin'}> <li className="Header-li" onClick={HandleOpen}>New Admin</li> </LinkRouter>
+                <LinkRouter to={'/newcity'}> <li className="Header-li" onClick={HandleOpen}>New City</li> </LinkRouter>
                 <button onClick={clearlocal} className="Header-signOut">
                   <li className="Header-li" onClick={HandleOpen}>Sign Out</li>
                 </button>
-                <LinkRouter to={'/newadmin'}> <li className="Header-li" onClick={HandleOpen}>New Admin</li> </LinkRouter>
               </ul>
-            ) : open && User.role === 'user' ? (
-                <ul className="Header-profileMenu">
+            ) : open && user.role === 'user' ? (
+              <ul className="Header-profileMenu">
+                <LinkRouter to={'/myprofile'}> <li className="Header-li" onClick={HandleOpen}>My Profile</li> </LinkRouter>
+                <LinkRouter to={'/mytineraries'}> <li className="Header-li" onClick={HandleOpen}>My Tineraries</li> </LinkRouter>
                 <button onClick={clearlocal} className="Header-signOut">
-                      
                   <li className="Header-li" onClick={HandleOpen}>Sign Out</li> 
-
                 </button>
               </ul>
             ) : null}
           </div>
           <button className="Header-button" onClick={HandleOpen}>
-            <img className="Header-loginphoto" src={usuario.photo} alt="acceso"/>
-            <p>{usuario.name}</p>
+            <img className="Header-loginphoto" src={user.photo} alt="acceso"/>
+            <p>{user.name}</p>
           </button>
         </div>
       );
@@ -91,9 +92,9 @@ export default function Header() {
   };
 
   const clearlocal = () => {
-    singOut(User.mail)
+    singOut(user.mail)
     // .then( response => console.log(response))
-    localStorage.clear();
+    localStorage.removeItem("token");
     window.location.reload(true)
   };
 
@@ -107,7 +108,7 @@ export default function Header() {
           <div className="Header-Backgound">&nbsp;</div>
           <ul className="Header-LinksContainer">{pages.map(link)}</ul>
         </nav>
-        {userlogged(User)}
+        {userlogged(user.logged)}
         <button className="Header-NavMenuButton" onClick={toggleMenu}>
           <img className="Header-NavMenuIcon" src={lista} alt="logo" />
         </button>

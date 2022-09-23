@@ -52,7 +52,9 @@
     border-radius: 10px;
     border: 0px;
 }
-
+.signUp-h2{
+    margin:15px
+}
 @media (min-width: 500px) {
     .Singup-form{
         display: flex;

@@ -1,15 +1,14 @@
 import '../styles/SingInForm.css'
 import { useState } from 'react'
-import { usePostUserSingInMutation } from '../features/userApi'
+import { usePostUserSingInMutation, useSignInTokenMutation } from '../features/userApi'
 import Alert from './alerts/Alert'
 import checkIcon from '../assets/icons/check.png'
 import errorIcon from '../assets/icons/exclamation.png'
 
 export default function SingInForm() {
-
+  // Mutation
   const [userLogin] = usePostUserSingInMutation()
-
-  const [userLS, setUserLS] = useState(0)
+  const [signInToken] = useSignInTokenMutation()
 
   const [login, setLogin] = useState({
     mail: "",
@@ -67,7 +66,11 @@ export default function SingInForm() {
       .then(Response => {
         if (Response.data.success === true) {
           showAlert('success')
-          setUserLS(localStorage.setItem('useriInfo', JSON.stringify(Response.data.response.user)))
+
+          let ls = localStorage.setItem('token', Response.data.response.token)
+          // sign in token verify 
+          signInToken(ls)
+          // .then(response => console.log(response))
           window.location.replace('/')
         }
         else {
