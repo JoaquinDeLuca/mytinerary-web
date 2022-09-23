@@ -72,10 +72,11 @@ function App() {
         {/* <Route path='' element={<UnderConstruction />} */}
         <Route path='/cities' element={<Cities/>} />
         <Route path='/city/:id'   element={<City/>}/>
-        <Route path='/newcity' element={<NewCity />} />
-        <Route path='/editcity/:id' element={logged === false ? <Singup/>  :<EditCity /> } />
-        <Route path='/mytineraries' element={<MyTineraries/>}/>
-        <Route path='/newitinerary'  element={<UnderConstruction/>}/>
+        <Route path='/newcity' element={logged && user.role === 'admin' ? <NewCity /> : <UnderConstruction/>} />
+        <Route path='/editcity/:id' element={logged && user.role === 'admin' ? <EditCity /> :  <UnderConstruction/> } />
+        <Route path='/mytineraries' element={logged ? <MyTineraries/> : <Singup />}/>
+        {/* <Route path='/newitinerary/:id'  element={<NewItinerary />}/> */}
+        {/* <Route path='/myprofile'  element={<MyProfile />}/> */}
       </Routes>
       </WebsiteLayouts>
     </BrowserRouter>
