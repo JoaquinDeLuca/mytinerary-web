@@ -78,8 +78,8 @@ function App() {
         <Route path='/newcity' element={logged && user.role === 'admin' ? <NewCity /> : <UserAdmin />} />
         <Route path='/editcity/:id' element={logged && user.role === 'admin' ? <EditCity /> :  <UserAdmin /> } />
         <Route path='/mytineraries' element={logged ? <MyTineraries/> : <Singup />}/>
-        <Route path='/newitinerary/:id'  element={<NewItinerary />}/>
-        <Route path='/myprofile'  element={<MyProfile />}/>
+        <Route path='/newitinerary/:id'  element={logged ? <NewItinerary /> : <Singup/> }/>
+        <Route path='/myprofile'  element={logged ? <MyProfile /> : <Singup/>}/>
       </Routes>
       </WebsiteLayouts>
     </BrowserRouter>
