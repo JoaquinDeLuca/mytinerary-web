@@ -2,6 +2,7 @@ import '../styles/Itinerary.css'
 import Activities from "./Activities"
 import Comments from "./Comments"
 import { useGetItinerariesQuery } from '../features/itinerariesApi'
+import Like from './Like'
 
 
 export default function Itinerary(props) {
@@ -30,6 +31,7 @@ export default function Itinerary(props) {
                             <div className="Itinerary-User">
                                 <img className="Itinerary-ImgUser" src={itineraries.user.photo} />
                                 <p className="Itinerary-UserName"> By {itineraries.user.name}</p>
+                                <Like itinerary={itineraries}   />
                             </div>
                             <div className="Itinerary-ActivitiesContainer">
                                 <h3 className="Itinerary-ActivityTitle">Activities:</h3>

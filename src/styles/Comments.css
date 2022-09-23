@@ -29,13 +29,16 @@
     width: 100%;
 }
 .Comment-p{
-     background-color: rgba(0, 0, 0, 0.288);
+    background-color: rgba(0, 0, 0, 0.288);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
     font-size: 22px;
     border-radius: 12px;
+    padding: 28px;
+    resize: none;
+    height: 100%;
 }
 .Comment-h3{
     cursor: pointer;
@@ -49,17 +52,66 @@
     flex-direction: column;
     justify-content: center;
 }
+.Comment-Button{
+    border: 0px;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 20px 0px;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.Comment-andButton{
+    display: flex;
+    gap: 50px;
+    height: 100%;
+
+}
+
+.Comment-ButtonContainer{
+    display: flex;
+    flex-direction: column;
+}
+.Comment-form{
+    width: 100vw;
+}
 
 
 @media (max-width: 768px) {
     .Comment-container{
-    width: 80vw;
-}
+        width: 80vw;   
+    }
+    .Comment-andButton{
+        display: block;
+        width: 80%;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .Comment-ButtonContainer{
+        display: flex;
+        flex-direction: row;
+    }
+    .Comment-form{
+        width: 90%;
+    }
+    .Comment-p{
+        height: 60%;
+    }
 }
 @media (max-width: 425px) {
     .Comment-container{
     width: 90vw;
-    height: 20vh;
+    height: 26vh;
+}
+.Comment-Button{
+    border: 0px;
+    padding: 4px;
+    border-radius: 5px;
+    margin: 12px 0px;
+    height: 36px;
+    width: 80px;
+    cursor: pointer;
 }
 .Comment-containerimg{
     margin: 0;
