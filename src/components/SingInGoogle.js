@@ -75,7 +75,7 @@ export default function SingInGoogle() {
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
-      client_id: '858987294668-ujt6gjb9nmuhec61k7kavpnmva2lunt5.apps.googleusercontent.com',
+      client_id: '303385633677-lof63srqjvlnlu87omsefc567ig7c2rg.apps.googleusercontent.com',
       callback: handleCredentialResponse,
       context: 'signup'
     });
