@@ -5,19 +5,18 @@ import itinerariesApi from './itinerariesApi'
 import UserSlice from './UserSlice'
 import commentsApi from './commentsApi'
 
-// Intancia del store
 export default configureStore({
     reducer: {
-        // cities: citiesSlice
         [citiesApi.reducerPath]: citiesApi.reducer,
-
         [userApi.reducerPath]: userApi.reducer,
-
         [itinerariesApi.reducerPath]: itinerariesApi.reducer,
-
-        userr: UserSlice,
-
-        [commentsApi.reducerPath]: commentsApi.reducer
-
-    }
+        [commentsApi.reducerPath]: commentsApi.reducer,
+        userr: UserSlice
+    },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware()
+            .concat(citiesApi.middleware)
+            .concat(itinerariesApi.middleware)
+            .concat(commentsApi.middleware)
+            .concat(userApi.middleware)
 })

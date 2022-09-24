@@ -8,23 +8,21 @@ export default function MyProfile() {
 
     let id = useSelector(state => state.userr.id)
     let userStore = useSelector(state => state.userr)
-    // console.log(id)
 
     let editInitial = {
-        name:"",
-        lastname:"",
-        photo:"",
-        country:"",
+        name: "",
+        lastname: "",
+        photo: "",
+        country: "",
     }
 
     const [user, setUser] = useState(editInitial)
 
 
     const captureData = (e) => {
-        const {name, value} = e.target
-        setUser({...user, [name]: value})
+        const { name, value } = e.target
+        setUser({ ...user, [name]: value })
     }
-    // console.log(user)
 
     const saveData = async (event) => {
         event.preventDefault();
@@ -36,23 +34,22 @@ export default function MyProfile() {
             country: user.country,
         }
 
-        await axios.put(api+`/auth/${id}`, newUser)
-        // .then( response => console.log(response))
+        await axios.put(api + `/auth/${id}`, newUser)
 
         window.location.reload(true)
     }
 
-  return (
-    <div className="MyProfile-container">
-       <h2 className="MyProfile-h2">MyProfile</h2> 
-        <form onSubmit={saveData} className="MyProfile-form">
-            <input className="Myprofile-input" onChange={captureData}  placeholder={userStore.name} name="name"/>
-            <input className="Myprofile-input" onChange={captureData}  placeholder={userStore.lastName} name="lastname"/>
-            <input className="Myprofile-input" onChange={captureData}  placeholder={userStore.photo} name="photo"/>
-            <input className="Myprofile-input" onChange={captureData}  placeholder={userStore.country} name="country"/>
-            <button className="Myprofile-btn"> Send </button>
-        </form>
+    return (
+        <div className="MyProfile-container">
+            <h2 className="MyProfile-h2">MyProfile</h2>
+            <form onSubmit={saveData} className="MyProfile-form">
+                <input className="Myprofile-input" onChange={captureData} placeholder={userStore.name} name="name" />
+                <input className="Myprofile-input" onChange={captureData} placeholder={userStore.lastName} name="lastname" />
+                <input className="Myprofile-input" onChange={captureData} placeholder={userStore.photo} name="photo" />
+                <input className="Myprofile-input" onChange={captureData} placeholder={userStore.country} name="country" />
+                <button className="Myprofile-btn"> Send </button>
+            </form>
 
-    </div>
-  )
+        </div>
+    )
 }

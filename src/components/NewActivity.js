@@ -6,16 +6,15 @@ import '../styles/ActivityAnditinerary.css'
 
 export default function NewActivity(props) {
     let idItinerary = props.id
-    // console.log("ACA ID:  "+idItinerary)
     const [activity, setActivity] = useState({
         name: "",
         photo: "",
-        itinerary:"",
+        itinerary: "",
     })
 
     const captureData = (event) => {
-        const {name, value}= event.target
-        setActivity({...activity, [name]: value })
+        const { name, value } = event.target
+        setActivity({ ...activity, [name]: value })
     }
 
     const saveData = (event) => {
@@ -28,21 +27,19 @@ export default function NewActivity(props) {
             itinerary: idItinerary,
         }
 
-        axios.post(api+`/activities/`, newActivity)
-        .then( response => console.log(response))
+        axios.post(api + `/activities/`, newActivity)
+            .then(response => console.log(response))
     }
 
-
-
-  return (
-    <div className="form-conatiner">
-        <h2>NewActivity</h2>
-        <form onSubmit={saveData} className="form">
-            <input onChange={captureData} placeholder='Name' name='name' className='input'/>
-            <input onChange={captureData} placeholder='Photo Url' name='photo' className='input'/>
-            <button className='button'>Send</button>
-        </form>
-    </div>
-  )
+    return (
+        <div className="form-conatiner">
+            <h2>NewActivity</h2>
+            <form onSubmit={saveData} className="form">
+                <input onChange={captureData} placeholder='Name' name='name' className='input' />
+                <input onChange={captureData} placeholder='Photo Url' name='photo' className='input' />
+                <button className='button'>Send</button>
+            </form>
+        </div>
+    )
 }
 

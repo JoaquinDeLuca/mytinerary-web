@@ -5,12 +5,12 @@ import { useState, useEffect } from 'react'
 
 export default function Footer() {
 
-  const [actualYear, setDate] = useState(null)
+  const [year, setYear] = useState(null)
 
   useEffect(() => {
     let today = new Date()
-    let actualYear = today.getFullYear()
-    setDate(actualYear)
+    let year = today.getFullYear()
+    setYear(year)
   }, [])
 
   const scrollToTop = () => {
@@ -29,7 +29,7 @@ export default function Footer() {
         <a href="https://web.telegram.org/" target="_blank" className='Footer-link'><img className='Footer-icon' src="https://i.ibb.co/X7X4Xyx/telegram.png" alt='telegram' /></a>
       </div>
       <div className='Footer-copyright'>
-        <p>  Mytinerary | © {actualYear}</p>
+        <p>  Mytinerary | © {year}</p>
         <p>
           <a href="https://github.com/NicoOjeda" target="_blank" className='Footer-github'>Ojeda</a> | <a href="https://github.com/JoaquinDeLuca" target="_blank" className='Footer-github'>De Luca</a> | <a href="https://github.com/LilAguh" target="_blank" className='Footer-github'>Ochoa</a>
         </p>
@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
         <button onClick={scrollToTop} className="Footer-scroll">
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" /></svg>
+            <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" /></svg>
         </button>
       </div>
 
