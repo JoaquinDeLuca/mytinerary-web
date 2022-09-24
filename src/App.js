@@ -30,32 +30,30 @@ function App() {
 
   const [signInToken] = useSignInTokenMutation()
 
-  const user = useSelector( state => state.userr)
+  const user = useSelector(state => state.userr)
   const logged = useSelector(state => state.userr.logged)
-  // console.log(logged)
 
 
-  useEffect(()=>{
-    if (localStorage.getItem('token')){
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
       verifyToken()
     }
-  },[])
+  }, [])
 
-  const  verifyToken = async () => {
+  const verifyToken = async () => {
     try {
       await signInToken()
-      .then(response => {
-        // console.log(response.data.succes)
-        if(response.data.succes)
-        dispatch( setCredentials(response.data.response.user))
-        else{
-          dispatch( deleteCredentials())
-          localStorage.removeItem('token')
-        }
-      }) 
+        .then(response => {
+          if (response.data.succes)
+            dispatch(setCredentials(response.data.response.user))
+          else {
+            dispatch(deleteCredentials())
+            localStorage.removeItem('token')
+          }
+        })
     } catch (error) {
       console.log(error)
-      dispatch( deleteCredentials() )
+      dispatch(deleteCredentials())
       localStorage.removeItem('token')
     }
   }
@@ -64,23 +62,23 @@ function App() {
 
   return (
     <BrowserRouter>
-    <ScrollToTop />
+      <ScrollToTop />
       <WebsiteLayouts>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/singup' element={logged ? <Home/> : <Singup />} />
-        <Route path='/singin' element={logged ? <Home/> : <SingIn />}/>
-        <Route path='/newadmin' element={logged && user.role === 'admin' ? <NewAdmin /> : <Home/>}/>
-        <Route path='/itineraries/:id' element={<EditInerary/> }/>
-        {/* <Route path='' element={<UnderConstruction />} */}
-        <Route path='/cities' element={<Cities/>} />
-        <Route path='/city/:id'   element={<City/>}/>
-        <Route path='/newcity' element={logged && user.role === 'admin' ? <NewCity /> : <UserAdmin />} />
-        <Route path='/editcity/:id' element={logged && user.role === 'admin' ? <EditCity /> :  <UserAdmin /> } />
-        <Route path='/mytineraries' element={logged ? <MyTineraries/> : <Singup />}/>
-        <Route path='/newitinerary/:id'  element={logged ? <NewItinerary /> : <Singup/> }/>
-        <Route path='/myprofile'  element={logged ? <MyProfile /> : <Singup/>}/>
-      </Routes>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/singup' element={logged ? <Home /> : <Singup />} />
+          <Route path='/singin' element={logged ? <Home /> : <SingIn />} />
+          <Route path='/newadmin' element={logged && user.role === 'admin' ? <NewAdmin /> : <Home />} />
+          <Route path='/itineraries/:id' element={<EditInerary />} />
+          {/* <Route path='' element={<UnderConstruction />} */}
+          <Route path='/cities' element={<Cities />} />
+          <Route path='/city/:id' element={<City />} />
+          <Route path='/newcity' element={logged && user.role === 'admin' ? <NewCity /> : <UserAdmin />} />
+          <Route path='/editcity/:id' element={logged && user.role === 'admin' ? <EditCity /> : <UserAdmin />} />
+          <Route path='/mytineraries' element={logged ? <MyTineraries /> : <Singup />} />
+          <Route path='/newitinerary/:id' element={logged ? <NewItinerary /> : <Singup />} />
+          <Route path='/myprofile' element={logged ? <MyProfile /> : <Singup />} />
+        </Routes>
       </WebsiteLayouts>
     </BrowserRouter>
   );

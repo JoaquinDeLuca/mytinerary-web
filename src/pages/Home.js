@@ -1,4 +1,4 @@
-import CarouselCities from '../components/CarouselCities'
+import CarouselCities from '../components/carousel/CarouselCities'
 import CalltoAction from '../components/CalltoAction'
 import Welcome from '../components/Welcome'
 

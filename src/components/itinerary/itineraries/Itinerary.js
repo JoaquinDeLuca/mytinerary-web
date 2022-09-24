@@ -1,24 +1,15 @@
-import '../styles/Itinerary.css'
-import Activities from "./Activities"
-import Comments from "./Comments"
-import { useGetItinerariesQuery } from '../features/itinerariesApi'
-import Like from './Like'
+import '../../../styles/Itinerary.css'
+import Activities from "../Activities"
+import Comments from "../Comments"
+import Like from '../Like'
 
 
 export default function Itinerary(props) {
 
-    const id = props.data._id
- 
-    const {
-        data: itineraries,
-        
-    } = useGetItinerariesQuery(id)
-    
-    const showItineraries = (itineraries) => {
+    const itineraries = props.data
 
-    
-        return (
-            <>
+    return (
+        <>
 
             <div className="Itinerary-Container">
                 <div className="Itinerary-ImgContainer">
@@ -31,7 +22,7 @@ export default function Itinerary(props) {
                             <div className="Itinerary-User">
                                 <img className="Itinerary-ImgUser" src={itineraries.user.photo} />
                                 <p className="Itinerary-UserName"> By {itineraries.user.name}</p>
-                                <Like itinerary={itineraries}   />
+                                <Like itinerary={itineraries} />
                             </div>
                             <div className="Itinerary-ActivitiesContainer">
                                 <h3 className="Itinerary-ActivityTitle">Activities:</h3>
@@ -41,15 +32,7 @@ export default function Itinerary(props) {
                     </div>
                 </div>
             </div>
-            <Comments data={itineraries}/>
-            </>
-        )
-    }
-
-
-    return (
-        <div className="Itinerary">
-            {itineraries?.map(showItineraries)}
-        </div>
+            <Comments data={itineraries} />
+        </>
     )
 }

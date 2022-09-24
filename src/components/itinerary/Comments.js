@@ -1,8 +1,8 @@
-import '../styles/Comments.css'
+import '../../styles/Comments.css'
 import { useEffect, useState } from 'react'
 import Comment from './comments/Comment'
 import CreateComment from './comments/CreateComment'
-import { useGetCommentQuery } from '../features/commentsApi'
+import { useGetCommentQuery } from '../../features/commentsApi'
 import { useSelector } from 'react-redux'
 
 
@@ -12,7 +12,6 @@ export default function Comments(props) {
     const logged = useSelector(state => state.userr.logged)
 
     const id = props.data._id
-    // const [comments, setComments] = useState([])
 
     const [open, setOpen] = useState(false)
 
@@ -31,15 +30,6 @@ export default function Comments(props) {
     useEffect(() => {
         setComment(comment);
     }, [comment]);
-
-
-    const showComments = (comment) => {
-        return (
-            <div className='Comment-container'>
-                <Comment data={comment} />
-            </div>
-        )
-    }
 
     const userLogic = () => {
         if (logged) {
@@ -73,7 +63,7 @@ export default function Comments(props) {
                     open
                         ?
                         <div className="Comment-Container2">
-                            {comments?.map(showComments)}
+                            {comments?.map(comments => <Comment data={comments} key={comments._id} name={comments._id} />)}
                             {userLogic()}
                         </div>
                         : null

@@ -1,6 +1,4 @@
-import Allcity from "../components/Allcity"
-
-
+import Allcity from "../components/cities/Cities"
 
 export default function Cities() {
 
@@ -8,6 +6,5 @@ export default function Cities() {
     <div className="Cities-container">
       <Allcity />
     </div>
-   
   )
 }
