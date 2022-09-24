@@ -1,7 +1,7 @@
-import PrintCity from "./PrintCity"
+import City from "./City"
 import { useState, useRef } from "react"
-import '../styles/Allcity.css'
-import { useGetAllCitiesQuery } from '../features/citiesApi'
+import '../../styles/Allcity.css'
+import { useGetAllCitiesQuery } from '../../features/citiesApi'
 
 export default function Allcity() {
 
@@ -11,13 +11,7 @@ export default function Allcity() {
     setValue(searchInput.current.value)
   }
 
-  const {
-    data: cities,
-    error,
-    isLoading,
-    isSuccess,
-    isFalied,
-  } = useGetAllCitiesQuery(value)
+  const { data: cities } = useGetAllCitiesQuery(value)
 
 
   return (
@@ -27,7 +21,7 @@ export default function Allcity() {
           <input className="Allcity-input" name="text" type="text" placeholder="Find city:" ref={searchInput} onChange={searchValue} />
         </div>
         <div className="Allcity-Printcity">
-          <PrintCity data={cities} />
+          {cities?.map(cities => <City key={cities.city} name={cities.city} data={cities} />)}
         </div>
       </div>
     </>

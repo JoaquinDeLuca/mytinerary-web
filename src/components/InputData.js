@@ -2,7 +2,7 @@ import Input from "./Input"
 
 export default function InputData() {
 
-    const info=[
+    const info = [
         { dato: "city", tipo: "text" },
         { dato: "country", tipo: "text" },
         { dato: "photo", tipo: "text" },
@@ -11,11 +11,11 @@ export default function InputData() {
     ]
 
 
-return (
-    <div>
-    <Input data={info} />
-    </div>
-)
+    return (
+        <div>
+            <Input data={info} />
+        </div>
+    )
 }
 
 

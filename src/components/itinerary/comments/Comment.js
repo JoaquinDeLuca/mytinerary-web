@@ -1,10 +1,9 @@
-import '../../styles/Comments.css'
+import '../../../styles/Comments.css'
 import DeleteComment from './DeleteComment'
 import { useEffect, useState } from 'react'
-import api from '../../api'
+import api from '../../../api'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
-
 
 export default function Comment(props) {
 
@@ -40,13 +39,11 @@ export default function Comment(props) {
         }
         editChange()
         axios.put(api + `/comments/${comment._id}`, patchComment)
-            .then(response => console.log(response.data.success))
     }
 
     useEffect(() => {
         setComment(comment);
     }, [comment]);
-
 
     const userLogic = () => {
         if (logged) {

@@ -11,38 +11,38 @@ const itinerariesApi = createApi({
 
     endpoints: (builder) => ({
         getItineraries: builder.query({
-            query: (id) =>({
+            query: (id) => ({
                 url: `itineraries/city/${id}`,
                 method: 'GET'
             }),
-            transformResponse: (response)=> response.response 
+            transformResponse: (response) => response.response
         }),
-        getItinerariesByUser : builder.query({
-            query: (id)=>({
+        getItinerariesByUser: builder.query({
+            query: (id) => ({
                 url: `itineraries/user/${id}`,
                 method: 'GET'
             }),
-            transformResponse: (response)=> response.response
+            transformResponse: (response) => response.response
         }),
-        deleteItinerary : builder.query({
+        deleteItinerary: builder.query({
             query: (id) => ({
                 url: `itineraries/${id}`,
                 method: 'DELETE'
             }),
-            transformResponse: (response)=> response.response
+            transformResponse: (response) => response.response
         }),
-        idItinerary : builder.query({
+        idItinerary: builder.query({
             query: (id) => ({
                 url: `itineraries/${id}`,
                 method: 'GET'
             }),
-            transformResponse: (response)=> response.response
+            transformResponse: (response) => response.response
         }),
         likeAndDislike: builder.mutation({
             query: (id) => ({
-                url:`itineraries/like/${id}`,
+                url: `itineraries/like/${id}`,
                 method: 'PATCH',
-                headers: {Authorization: `Bearer ${localStorage.getItem("token")}`}
+                headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
             })
         }),
         postItinerary: builder.mutation({
@@ -54,14 +54,14 @@ const itinerariesApi = createApi({
         })
     })
 
-})  
+})
 
 export default itinerariesApi
-export const { 
+export const {
     useGetItinerariesQuery,
     useGetItinerariesByUserQuery,
-    useDeleteItineraryQuery, 
+    useDeleteItineraryQuery,
     useIdItineraryQuery,
     useLikeAndDislikeMutation,
     usePostItineraryMutation
-     } = itinerariesApi
+} = itinerariesApi

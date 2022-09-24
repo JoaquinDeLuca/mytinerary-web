@@ -1,21 +1,18 @@
-import { usePostCommentMutation } from '../../features/commentsApi'
+import { usePostCommentMutation } from '../../../features/commentsApi'
 import { useEffect, useState } from 'react'
-import { setCredentials, deleteCredentials } from '../../features/UserSlice';
+import { setCredentials, deleteCredentials } from '../../../features/UserSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { useSignInTokenMutation } from '../../features/userApi';
+import { useSignInTokenMutation } from '../../../features/userApi';
 
 export default function CreateComment(props) {
 
+    const [signInToken] = useSignInTokenMutation()
+    const [newComment] = usePostCommentMutation()
     const dispatch = useDispatch()
 
-    const [signInToken] = useSignInTokenMutation()
-
     const user = useSelector(state => state.userr)
-    // const logged = useSelector(state => state.userr.logged)
-    // console.log(user)
-    const [newComment] = usePostCommentMutation()
-
     const itineraryId = props.data
+
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
@@ -27,7 +24,6 @@ export default function CreateComment(props) {
         try {
             await signInToken()
                 .then(response => {
-                    // console.log(response.data.succes)
                     if (response.data.succes)
                         dispatch(setCredentials(response.data.response.user))
                     else {

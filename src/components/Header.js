@@ -3,14 +3,10 @@ import "../styles/Header.css";
 import acceso from "../img/acceso.png";
 import logo3 from "../img/logo3.png";
 import lista from "../img/lista.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePostUserSingOutMutation } from "../features/userApi";
 import { useSelector } from 'react-redux';
 
-const pages = [
-  { name: "Home", to: "/" },
-  { name: "Cities", to: "/cities" },
-];
 
 export default function Header() {
 
@@ -37,8 +33,7 @@ export default function Header() {
     }
   };
 
-  // useSelector( state => console.log(state.userr))
-  let user = useSelector( state => state.userr)
+  let user = useSelector(state => state.userr)
 
   const userlogged = (logged) => {
     if (!logged) {
@@ -77,13 +72,13 @@ export default function Header() {
                 <LinkRouter to={'/myprofile'}> <li className="Header-li" onClick={HandleOpen}>My Profile</li> </LinkRouter>
                 <LinkRouter to={'/mytineraries'}> <li className="Header-li" onClick={HandleOpen}>My Tineraries</li> </LinkRouter>
                 <button onClick={clearlocal} className="Header-signOut">
-                  <li className="Header-li" onClick={HandleOpen}>Sign Out</li> 
+                  <li className="Header-li" onClick={HandleOpen}>Sign Out</li>
                 </button>
               </ul>
             ) : null}
           </div>
           <button className="Header-button" onClick={HandleOpen}>
-            <img className="Header-loginphoto" src={user.photo} alt="acceso"/>
+            <img className="Header-loginphoto" src={user.photo} alt="acceso" />
             <p>{user.name}</p>
           </button>
         </div>
@@ -93,20 +88,22 @@ export default function Header() {
 
   const clearlocal = () => {
     singOut(user.mail)
-    // .then( response => console.log(response))
     localStorage.removeItem("token");
     window.location.reload(true)
   };
 
   return (
     <header className={`${menu ? "HeaderisActive" : ""} `}>
-      
+
       <LinkRouter to="/"><img className="Header-logo" src={logo3} alt="logo" /></LinkRouter>
-      
+
       <div className="Header-NavContainer">
         <nav className={`Header-nav ${menu ? "isActive" : ""} `}>
           <div className="Header-Backgound">&nbsp;</div>
-          <ul className="Header-LinksContainer">{pages.map(link)}</ul>
+          <ul className="Header-LinksContainer">
+            <LinkRouter className="Header-link" to="/">Home</LinkRouter>
+            <LinkRouter className="Header-link" to="/cities">Cities</LinkRouter>
+          </ul>
         </nav>
         {userlogged(user.logged)}
         <button className="Header-NavMenuButton" onClick={toggleMenu}>

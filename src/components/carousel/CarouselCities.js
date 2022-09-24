@@ -1,5 +1,5 @@
 import Carousel from "./Carousel"
-import { useGetAllCitiesQuery } from '../features/citiesApi'
+import { useGetAllCitiesQuery } from '../../features/citiesApi'
 
 
 export default function CarouselCities() {
@@ -7,13 +7,7 @@ export default function CarouselCities() {
   const initialCity = 0
   const endCity = 12
 
-  const {
-    data: cities,
-    error,
-    isLoading,
-    isSuccess,
-    isFalied,
-  } = useGetAllCitiesQuery([])
+  const { data: cities } = useGetAllCitiesQuery([])
 
 
   return (
