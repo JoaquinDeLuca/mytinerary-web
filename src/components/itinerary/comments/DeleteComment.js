@@ -1,9 +1,8 @@
-import { useDeleteCommentMutation } from '../../features/commentsApi'
-import '../../styles/Comments.css'
+import { useDeleteCommentMutation } from '../../../features/commentsApi'
+import '../../../styles/Comments.css'
 
 export default function DeleteComment(props) {
     const [deleteComment] = useDeleteCommentMutation()
-
     const id = props.data
 
     const handleDelete = () => {

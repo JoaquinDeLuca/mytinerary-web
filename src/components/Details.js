@@ -4,14 +4,12 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import api from '../api'
 import { Link as LinkRouter } from 'react-router-dom'
-import Itinerary from './Itinerary'
+import Itineraries from './itinerary/Itineraries'
 import { useSelector } from 'react-redux'
 
 export default function Details() {
 
-  // Me traigo el id que pasa por URL, 
   let { id } = useParams()
-  // console.log(Este es: ${id})
 
   const logged = useSelector(state => state.userr.logged)
   const role = useSelector(state => state.userr.role)
@@ -23,23 +21,23 @@ export default function Details() {
   }, [id])
 
   const userlogic = () => {
-    if(logged){
-      if(role === "admin"){
+    if (logged) {
+      if (role === "admin") {
         return (
           <>
-            <LinkRouter className='Details-boton' to={'/editcity/'+ id}>Edit City</LinkRouter>
-            <LinkRouter className='Details-boton' to={'/newitinerary/'+ id}>New Itinerary</LinkRouter>
+            <LinkRouter className='Details-boton' to={'/editcity/' + id}>Edit City</LinkRouter>
+            <LinkRouter className='Details-boton' to={'/newitinerary/' + id}>New Itinerary</LinkRouter>
           </>
         )
       } else {
         return (
           <>
-            <LinkRouter className='Details-boton' to={'/newitinerary/'+ id}>New Itinerary</LinkRouter>
+            <LinkRouter className='Details-boton' to={'/newitinerary/' + id}>New Itinerary</LinkRouter>
           </>
         )
       }
     } else {
-      return(
+      return (
         <>
         </>
       )
@@ -65,9 +63,6 @@ export default function Details() {
               <h2 className="Details-h2">{city.city}</h2>
               <p className='Details-p'>Country: {city.country} </p>
               <p className='Details-p'>population: {city.population} </p>
-              {/* <p className='Details-p'>Fundation: {city.fundation} </p> */}
-              {/* <LinkRouter className='Details-boton' to={'/editcity/'+ id}>Edit City</LinkRouter>
-              <LinkRouter className='Details-boton' to={'/newitinerary/'+ id}>New Itinerary</LinkRouter> */}
               {userlogic()}
             </div>
           </div>
@@ -81,7 +76,7 @@ export default function Details() {
   return (
     <>
       {printDetails(cities)}
-      <Itinerary data={cities} />
+      <Itineraries data={cities} />
     </>
   )
 }

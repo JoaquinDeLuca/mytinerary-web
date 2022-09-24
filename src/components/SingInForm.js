@@ -6,7 +6,6 @@ import checkIcon from '../assets/icons/check.png'
 import errorIcon from '../assets/icons/exclamation.png'
 
 export default function SingInForm() {
-  // Mutation
   const [userLogin] = usePostUserSingInMutation()
   const [signInToken] = useSignInTokenMutation()
 
@@ -68,9 +67,7 @@ export default function SingInForm() {
           showAlert('success')
 
           let ls = localStorage.setItem('token', Response.data.response.token)
-          // sign in token verify 
           signInToken(ls)
-          // .then(response => console.log(response))
           window.location.replace('/')
         }
         else {

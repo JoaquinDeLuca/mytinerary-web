@@ -96,8 +96,6 @@ export default function SingUpInput() {
         event.target.reset()
     }
 
-
-
     return (
         <div className="Singup-container">
             <h2 className='signUp-h2'>Sign up now</h2>
