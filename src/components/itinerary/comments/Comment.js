@@ -3,7 +3,10 @@ import DeleteComment from './DeleteComment'
 import { useEffect, useState } from 'react'
 import api from '../../../api'
 import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux';
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import { useSelector } from 'react-redux';
+import TextEditor from './TextEditor'
 
 export default function Comment(props) {
 
@@ -22,12 +25,6 @@ export default function Comment(props) {
 
     const editChange = () => {
         setEdit(!edit);
-    }
-
-
-    const handleChange = event => {
-        const { name, value } = event.target
-        setMessage({ ...message, [name]: value })
     }
 
     const saveData = event => {
@@ -50,18 +47,22 @@ export default function Comment(props) {
             if (comment.user._id === userID) {
                 return (
                     edit ? <div className='Comment-form' >
-                        <form onSubmit={saveData} className='Comment-andButton'>
-                            <textarea className='Comment-p' name="comment" onChange={handleChange} />
+                        <div className='Comment-andButton'>
+                            {/* <textarea className='Comment-p' name="comment" onChange={handleChange} /> */}
+                            <TextEditor setMessage={setMessage} />
                             <div className='Comment-ButtonContainer'>
-                                <button className='Comment-Button' >send</button>
+                                <button className='Comment-Button' onClick={saveData} >send</button>
                                 <DeleteComment data={comment._id} />
                             </div>
-                        </form>
+                        </div>
                     </div> :
                         <div className='Comment-form' >
                             <div className='Comment-andButton'>
                                 <div className='Comment-p'>
-                                    <div>{`${comment.comment}`}</div>
+                                    <div>
+                                        {/* {`${comment.comment}`} */}
+                                        <ReactMarkdown children={comment.comment} rehypePlugins={[rehypeRaw]} />
+                                    </div>
                                 </div>
                                 <div className='Comment-ButtonContainer'>
                                     <button className='Comment-Button' onClick={editChange}>edit</button>
@@ -76,7 +77,10 @@ export default function Comment(props) {
                     <div className='Comment-form' >
                         <div className='Comment-andButton' >
                             <div className='Comment-p'>
-                                <div>{`${comment.comment}`}</div>
+                                <div>
+                                    {/* {`${comment.comment}`} */}
+                                    <ReactMarkdown children={comment.comment} rehypePlugins={[rehypeRaw]} />
+                                </div>
                             </div>
                             <div className='Comment-ButtonContainer'>
                                 <DeleteComment data={comment._id} />
@@ -88,7 +92,10 @@ export default function Comment(props) {
             else {
                 return (
                     <div className='Comment-p'>
-                        <div>{`${comment.comment}`}</div>
+                        <div>
+                            {/* {`${comment.comment}`} */}
+                            <ReactMarkdown children={comment.comment} rehypePlugins={[rehypeRaw]} />
+                        </div>
                     </div>
                 )
             }
@@ -96,7 +103,10 @@ export default function Comment(props) {
         else {
             return (
                 <div className='Comment-p'>
-                    <div>{`${comment.comment}`}</div>
+                    <div>
+                        {/* {`${comment.comment}`} */}
+                        <ReactMarkdown children={comment.comment} rehypePlugins={[rehypeRaw]} />
+                    </div>
                 </div>
             )
         }
