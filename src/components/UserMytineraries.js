@@ -2,6 +2,7 @@ import axios from "axios"
 import { useGetItinerariesByUserQuery } from '../features/itinerariesApi'
 import { Link as LinkRouter } from 'react-router-dom'
 import { useSelector } from "react-redux"
+import api from "../api"
 
 export default function UserMytineraries() {
 
@@ -23,7 +24,7 @@ export default function UserMytineraries() {
     }
 
     const deleteItinerary = (id) => {
-        axios.delete(`http://localhost:4000/itineraries/${id}`)
+        axios.delete(api + `/itineraries/${id}`)
         window.location.replace('/mytineraries')
     }
 
