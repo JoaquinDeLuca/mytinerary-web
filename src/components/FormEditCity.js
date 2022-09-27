@@ -47,7 +47,7 @@ export default function FormEditCity() {
 
   const obtUno = async (valorId) => {
     const res = await axios.get(api + `/cities/${valorId}`)
-    console.log(res)
+    // console.log(res)
     setCity({
       city: res.data.response.city,
       country: res.data.response.country,
