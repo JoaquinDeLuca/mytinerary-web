@@ -2,6 +2,7 @@ import '../../styles/Activities.css'
 import axios from "axios"
 import { useEffect, useState } from 'react'
 import Activity from './activities/Activity'
+import api from '../../api'
 
 export default function Activities(props) {
 
@@ -9,7 +10,7 @@ export default function Activities(props) {
     const [activities, setActivity] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/activities/itinerary/${id}`)
+        axios.get(`${api}/activities/itinerary/${id}`)
             .then(response => setActivity(response.data.response))
     }, [id])
 

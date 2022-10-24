@@ -9,3 +9,11 @@
     margin-left: 15px;
 }
 
+.red{
+    color: red;
+}
+
+.white{
+    color: rgba(255, 255, 255, 0.96);
+}
+
