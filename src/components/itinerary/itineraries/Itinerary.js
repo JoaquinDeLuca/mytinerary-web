@@ -13,7 +13,7 @@ export default function Itinerary(props) {
 
             <div className="Itinerary-Container">
                 <div className="Itinerary-ImgContainer">
-                    <img className="Itinerary-Img" src={itineraries.city.photo} />
+                    {/* <img className="Itinerary-Img" src={itineraries.city.photo} /> */}
                 </div>
                 <div className="Itinerary-InformationContainer">
                     <h3 className="Itinerary-Title">{itineraries.name}</h3>
