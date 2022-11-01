@@ -1,5 +1,6 @@
 import Carousel from "./Carousel"
 import { useGetAllCitiesQuery } from '../../features/citiesApi'
+import Spinner from 'react-bootstrap/Spinner';
 
 
 export default function CarouselCities() {
@@ -7,12 +8,22 @@ export default function CarouselCities() {
   const initialCity = 0
   const endCity = 12
 
-  const { data: cities } = useGetAllCitiesQuery([])
+  const { data: cities, isLoading } = useGetAllCitiesQuery([])
 
+  const loadindg = () =>{
+  }
+  
+  if (isLoading){
+    return (
+      <div className="d-flex justify-content-center">
+         <Spinner animation="border" role="status"></Spinner>
+      </div>
+    )
+  }
 
   return (
     <div>
-      <Carousel data={cities?.slice(initialCity, endCity)} range={4} interval={5} slides={3} />
+      <Carousel data={cities?.slice(initialCity, endCity)} />
     </div>
   )
 }
