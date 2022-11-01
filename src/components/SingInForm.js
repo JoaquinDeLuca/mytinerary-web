@@ -1,9 +1,9 @@
 import '../styles/SingInForm.css'
 import { useState } from 'react'
 import { usePostUserSingInMutation, useSignInTokenMutation } from '../features/userApi'
-import Alert from './alerts/Alert'
 import checkIcon from '../assets/icons/check.png'
 import errorIcon from '../assets/icons/exclamation.png'
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function SingInForm() {
   const [userLogin] = usePostUserSingInMutation()
@@ -21,37 +21,6 @@ export default function SingInForm() {
     setLogin({ ...login, [name]: value })
   }
 
-
-  const [list, setList] = useState([])
-  let toastProperties = null
-
-  const showAlert = type => {
-    switch (type) {
-      case 'success':
-        toastProperties = {
-          id: list.length + 1,
-          title: 'Welcome',
-          description: 'Successful SignIn',
-          backgroundColor: '#5cb85c',
-          icon: checkIcon
-        }
-        break;
-      case 'error':
-        toastProperties = {
-          id: list.length + 1,
-          title: 'Error',
-          description: 'Wrong email or password',
-          backgroundColor: '#d9534f',
-          icon: errorIcon
-        }
-        break;
-      default:
-        toastProperties = [];
-    }
-    setList([...list, toastProperties])
-  }
-
-
   const saveData = (event) => {
     event.preventDefault()
 
@@ -63,15 +32,15 @@ export default function SingInForm() {
     }
     userLogin(userData)
       .then(Response => {
-        if (Response.data.success === true) {
-          showAlert('success')
+        if (Response.data?.success === true) {
+          toast.success("you have successfully logged in")
 
           let ls = localStorage.setItem('token', Response.data.response.token)
           signInToken(ls)
           window.location.replace('/')
         }
         else {
-          showAlert('error')
+          toast.error("wrong email or password")
         }
       })
 
@@ -85,8 +54,8 @@ export default function SingInForm() {
         <input onChange={captureData} name='mail' className='SingInForm-input' placeholder='Email' type='text' required />
         <input onChange={captureData} name='password' className='SingInForm-input' placeholder='Password' type='password' required />
         <button className='SingInFor-btn'>Sing In</button>
+        <Toaster />
       </form>
-      <Alert toastlist={list} setList={setList} />
     </div>
   )
 }

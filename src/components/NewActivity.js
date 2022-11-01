@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState } from "react"
 import api from "../api"
 import '../styles/ActivityAnditinerary.css'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export default function NewActivity(props) {
@@ -28,7 +29,14 @@ export default function NewActivity(props) {
         }
 
         axios.post(api + `/activities/`, newActivity)
-            .then(response => console.log(response))
+            .then(response => {
+                if(response.data.success === true){
+                    toast.success("activity created successfully")
+                    console.log(response.data)
+                }else{
+                    toast.error("Error")
+                }
+            })
     }
 
     return (
@@ -38,6 +46,7 @@ export default function NewActivity(props) {
                 <input onChange={captureData} placeholder='Name' name='name' className='input' />
                 <input onChange={captureData} placeholder='Photo Url' name='photo' className='input' />
                 <button className='button'>Send</button>
+                <Toaster />
             </form>
         </div>
     )

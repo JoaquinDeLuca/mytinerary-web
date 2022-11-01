@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { usePostItineraryMutation } from '../features/itinerariesApi'
 import NewActivity from '../components/NewActivity'
 import '../styles/ActivityAnditinerary.css'
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function NewItinerary() {
 
@@ -41,7 +42,14 @@ export default function NewItinerary() {
     }
 
     postItinerary(newitinerary)
-      .then(response => setIdItineray(response.data.response._id))
+      .then(response => {
+        if(response.data?.success === true){
+          toast.success("Itinerary created successfully")
+          setIdItineray(response.data.response._id)
+        }else {
+          toast.error(response.error.data?.message)
+        }
+      })
 
   }
 
@@ -50,11 +58,13 @@ export default function NewItinerary() {
     <div className=''>
       <div className='form-conatiner'>
         <h1>New Itinerary</h1>
+        <p>Step one create the itinerary, send and then the activity of it, send again</p>
         <form onSubmit={saveData} className="form">
           <input onChange={captureData} placeholder='Name' name='name' className='input' />
           <input onChange={captureData} placeholder='Price' name='price' className='input' />
           <input onChange={captureData} placeholder='Duration' name='duration' className='input' />
           <button className='button'>Send</button>
+          <Toaster />
         </form>
       </div>
       <NewActivity id={idItinerary} />

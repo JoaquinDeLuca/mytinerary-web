@@ -2,6 +2,7 @@ import '../../styles/Like.css'
 import { useLikeAndDislikeMutation } from "../../features/itinerariesApi"
 import { useState, useEffect } from "react"
 import { useSelector } from 'react-redux'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export default function Like(props) {
@@ -25,18 +26,25 @@ export default function Like(props) {
 
 
     const clickLikeDislike = async () => {
-        if (localStorage.getItem('token')) {
-            try {
-                let res = await likeAndDislike(idItinerary)
-                if (res.data?.succes) {
-                    setLike('red')
-                    setNrolike(nroLike + 1)
-                } else {
-                    setLike("white")
-                    setNrolike(nroLike - 1)
+        if(userID === null){
+            toast.error("log in to like an itinerary",{
+                duration: 3000,
+                position: 'buttom-left',
+            })
+        } else {
+            if (localStorage.getItem('token')) {
+                try {
+                    let res = await likeAndDislike(idItinerary)
+                    if (res.data?.succes) {
+                        setLike('red')
+                        setNrolike(nroLike + 1)
+                    } else {
+                        setLike("white")
+                        setNrolike(nroLike - 1)
+                    }
+                } catch (error) {
+                    console.log(error)
                 }
-            } catch (error) {
-                console.log(error)
             }
         }
     }
@@ -51,6 +59,7 @@ export default function Like(props) {
                     {nroLike}
                 </p>
             </button>
+            <Toaster />
         </div>
     )
 }

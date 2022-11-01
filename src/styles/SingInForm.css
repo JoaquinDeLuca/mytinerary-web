@@ -1,3 +1,9 @@
+.container{
+    height: 62vh;
+    display: flex;
+    justify-content: center;
+}
+
 .SingInForm-container{
     display: flex;
     flex-direction: column;
