@@ -1,119 +1,17 @@
-.Carousel-img{
-    height: 100%;
+.carouselDiv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.carouselItem{
+    width: 80%;
+    background-color: transparent;
+}
+.carouselImg{
+    height: 70vmin;
     width: 100%;
     object-fit: cover;
-    border: 2px solid rgba(0, 0, 0, 0.891);
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px black;
-}
-.Caorusel{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0px 25px;
-    padding: 0px 50px;
-}
-.Carousel-h2{
-    text-align: center;
-    font-size: 40px;
-    margin: 20px;
-}
-.Carousel-container{
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-.Carousel-cities{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin:  0px 16px;
-}
-
-.Carousel-citiesName{
-    /* margin: 15px 0px; */
-    font-size: 20px;
-    font-weight: 400;
-    text-decoration: none;
-    color: rgb(251, 248, 248);
-    position: relative;
-    bottom: 29px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.661);
-    border-radius: 0px 0px 10px 10px;
-    /* padding-bottom: 2px; */
-
-}
-.Carousel-box{
-    height: 33vh;
-    width: 30vw;
-}
-a{
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    .Carousel-box{
-        height: 30vh;
-        width: 60vw;
-    }
-    .Carousel-container{
-      padding: 0;
-      margin: 0;
-    }
-    .Carousel-citiesName{
-        margin: 10px 0px;
-        font-size: 22px;
-        
-    }
-    .Carousel-h2{
-        text-align: center;
-        font-size: 30px;
-        margin: 20px;
-    }
-    .Carousel-citiesName{
-        bottom: 42px;
-    }
-    .Caorusel{
-        padding: 0px 10px;
-    }
-}
-@media (max-width: 425px) {
-    .Carousel-box{
-        height: 24vh;
-        width: 60vw;
-    }
-    .Carousel-h2{
-        text-align: center;
-        font-size: 20px;
-        margin: 20px;
-    }
-    .Carousel-citiesName{
-        bottom: 40px;
-        padding-bottom: 2.5px;
-        font-weight: 400;
-    }
-    .Caorusel{
-        padding: 0px;
-    }
-}
-
-@media (max-width: 320px) {
-    .Carousel-box{
-        height: 20vh;
-        width: 58vw;
-    }
-    .Carousel-h2{
-        text-align: center;
-        font-size: 18px;
-        margin: 20px;
-    }
-    .Carousel-citiesName{
-        font-weight: 300;
-    }
+    border-radius: 8px;
+    filter: brightness(60%) contrast(106%);
 }
