@@ -1,5 +1,6 @@
 import Footer from "../components/Footer"
-import Header from "../components/Header"
+// import Header from "../components/Header"
+import Header from "../components/header/Header"
 import '../styles/WebsiteLayouts.css'
 
 export default function WebsiteLayouts(props) {
