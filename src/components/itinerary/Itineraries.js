@@ -6,6 +6,7 @@ import { useGetItinerariesQuery } from '../../features/itinerariesApi'
 export default function Itineraries(props) {
 
     const id = props.data._id
+    const name = props.data.city
 
     const { data: itineraries } = useGetItinerariesQuery(id)
 
