@@ -4,7 +4,21 @@
   --white:#F3F4F9;
   --grey: #D8E3E9;
 }
-
+@font-face {
+  font-family: "Brighten";
+  src: url("./assets/fonts/Brighten.otf");
+}
+@font-face {
+  font-family: "TallX";
+  src: url("./assets/fonts/MKSansserifLightTallX.ttf");
+}
+@font-face {
+  font-family: "Refrigerator";
+  src: url("./assets/fonts/RefrigeratorDeluxe.otf");
+}
+html {
+  overflow: overlay;
+}
 *{
   margin: 0px;
   padding: 0px;
@@ -17,10 +31,11 @@
   justify-content: center;
 }
 body::-webkit-scrollbar{
-  width: 8px;
-  background-color: rgb(235, 232, 232);
+  width: 10px;
+  background-color: none;
 }
 body::-webkit-scrollbar-thumb{
   background: rgba(94, 94, 94, 0.587);
-  border-radius: 50px;
+  border-radius: 15px;
 }
+
