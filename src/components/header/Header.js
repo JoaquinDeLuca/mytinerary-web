@@ -1,36 +1,64 @@
+import { Link as LinkRouter } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButtonn from 'react-bootstrap/DropdownButton';
-import User from "../../img/acceso.png"
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import SignInModal from "../signIn/SignInModal";
+import logo3 from "../../img/logo3.png";
+
+import "../../styles/Header.css"
 
 
 export default function Header() {
     return (
-        <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="me-auto">
-                </Nav>
-                <Nav>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    <DropdownButton
-                        align="end"
-                        title="Dropdown end"
-                        id="dropdown-menu-align-end"
-                    >
-                        <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-                        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-                        <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
-                    </DropdownButton>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
 
+        <Navbar expand="sm" id="Navbar" >
+            <Navbar.Brand >
+                <Nav.Link className="text-white">
+                    <LinkRouter to="/" className="text-white text-decoration-none">
+                        <div className="HeaderLogoContainer">
+                            <h3 className="HeaderLogo">MY TINERARY</h3>
+                            <p className="HeaderSubLogo">Trips</p>
+                        </div>
+                        {/* MY TINERARY */}
+                    </LinkRouter>
+                </Nav.Link>
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-sm`} />
+            <Navbar.Offcanvas
+                id={`offcanvasNavbar-expand-sm`}
+                aria-labelledby={`offcanvasNavbarLabel-expand-sm`}
+                placement="end"
+            >
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
+                        My Tinerary
+                    </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    <Nav className="justify-content-end flex-grow-1 pe-3">
+                        <Nav.Item>
+                            <Nav.Link className="text-white">
+                                <LinkRouter to="/" className="text-white text-decoration-none">
+                                    Home
+                                </LinkRouter>
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link className="text-white">
+                                <LinkRouter to="/cities" className="text-white text-decoration-none">
+                                    Cities
+                                </LinkRouter>
+                            </Nav.Link>
+                        </Nav.Item>
+                        <SignInModal />
+                    </Nav>
+                </Offcanvas.Body>
+            </Navbar.Offcanvas>
+        </Navbar>
     )
 }
