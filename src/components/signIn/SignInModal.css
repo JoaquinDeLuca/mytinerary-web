@@ -1,0 +1,6 @@
+.HeaderUserIcon{
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+    padding: 0;
+}
