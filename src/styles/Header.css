@@ -1,4 +1,33 @@
-header{
+
+#Navbar{
+    color: rgba(0, 0, 0, 0.086);
+    height: 70px;
+    position: absolute;
+    z-index: 12;
+    width: 100%;
+    padding: 0 30px;
+    /* background-color: none; */
+}
+.HeaderLogo{
+    font-family: Refrigerator;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+}
+.HeaderSubLogo{
+    position: absolute;
+    font-family: Brighten;
+    padding: 0;
+    top: 36px;
+    left: 76px;
+}
+
+
+
+
+
+
+/* header{
     display: flex;
     background-color: #fe938c;
     justify-content: space-between;
@@ -84,9 +113,7 @@ header{
     display: none;
 }
 
-.Header-logo{
-    height: 6rem;
-}
+
 
 .Header-login,
 .Header-NavCloseIcon,
@@ -211,4 +238,4 @@ header{
     .Header-NavMenuIcon{
         height: 2.5rem;
     }
-}
+} */

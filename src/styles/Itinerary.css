@@ -3,54 +3,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 40px;
-}
-.Itinerary-Container{
-    display: flex;
-    flex-direction: column;
-    /* background-color: rgba(255, 255, 255, 0.79); */
-    padding: 12px;
-}
-/* .Itinerary-ImgContainer{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-} */
-/* .Itinerary-Img{
+}
+.ItineraryLine{
+    background-color: #e1e1e1;
     width: 90%;
-    padding: 10px;
-    border-radius: 18px;
-} */
-.Itinerary-InformationContainer{
-    width: 100%;
-}
-
-.Itinerary-Title{
-    font-weight: 700;
-    font-size: 24px;
-}
-/* Activities */
-/* .Itinerary-ActivitiesContainer{}; */
-
-.Itinerary-ActivityTitle{
-    font-weight: 700;
-    /* font-size: 20px; */
-    padding-left: 10px;
-}
-
-.Itinerary-User{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px 0;
-}
-
-.Itinerary-ImgUser{
-    width: 35px;
-    border-radius: 50%;
-}
-
-.Itinerary-UserName{
-    font-weight: 500;
-    font-size: 18px;
+    height: 2px;
 }

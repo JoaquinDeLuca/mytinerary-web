@@ -1,5 +1,6 @@
 .Activity{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -7,33 +8,35 @@
     gap: 10px;
 }
 .Activity-Container{
-    background-color: rgba(255, 255, 255, 0.786);
     padding: 15px;
-    border-radius: 7px;
+    position: relative;
+    width: 300px;
+    height: 300px;
 }
 
-.Activity-ContainerImg{
-    width: 120px;
-    height: 120px;
-}
 .Activity-Img{
     object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 7px;
+    width: 300px;
+    height: 250px;
+    display: block;
 }
 .Activity-Title{
+    position: absolute;
+    bottom: 28px;
     padding: 5px;
-    width: 120px;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 600;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.53);
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: wrap;
     overflow: hidden;
+    width: 300px;
+    height: 50px;
 }
 
 
-@media (min-width: 700px) {
+/* @media (min-width: 700px) {
     .Activity-ContainerImg{
         width: 160px;
         height: 160px;
@@ -51,7 +54,7 @@
         width: 300px;
         height: 220px;
     }
-}
+} */
 
 
 
