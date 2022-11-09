@@ -5,7 +5,9 @@ export default function Activities(props) {
 
     return (
         <div className="Activity-Container">
-            <img className='Activity-Img' src={activities.photo} />
+            <div className='Activity-ContainerImg' >
+                <img className='Activity-Img' src={activities.photo} />
+            </div>
             <h4 className='Activity-Title' >{activities.name}</h4>
         </div>
     )
