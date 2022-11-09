@@ -28,29 +28,30 @@ export default function Header() {
                     </LinkRouter>
                 </Nav.Link>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-sm`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-sm`} className="bg-white" />
             <Navbar.Offcanvas
                 id={`offcanvasNavbar-expand-sm`}
                 aria-labelledby={`offcanvasNavbarLabel-expand-sm`}
                 placement="end"
             >
-                <Offcanvas.Header closeButton>
+                <Offcanvas.Header closeButton fill>
                     <Offcanvas.Title id={`offcanvasNavbarLabel-expand-sm`}>
-                        My Tinerary
+                        <h3 className="HeaderLogo">MY TINERARY</h3>
+                        <p className="HeaderSubLogo">Trips</p>
                     </Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body className="HeaderBodyNav">
                     <Nav className="justify-content-end flex-grow-1 pe-3">
                         <Nav.Item>
-                            <Nav.Link className="text-white">
-                                <LinkRouter to="/" className="text-white text-decoration-none">
+                            <Nav.Link>
+                                <LinkRouter to="/" className="text-white text-decoration-none fs-4">
                                     Home
                                 </LinkRouter>
                             </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link className="text-white">
-                                <LinkRouter to="/cities" className="text-white text-decoration-none">
+                            <Nav.Link>
+                                <LinkRouter to="/cities" className="text-white text-decoration-none fs-4">
                                     Cities
                                 </LinkRouter>
                             </Nav.Link>
