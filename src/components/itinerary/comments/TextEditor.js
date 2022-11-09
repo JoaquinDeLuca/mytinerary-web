@@ -46,7 +46,7 @@ export default function TextEditor({ setMessage }) {
                 <button ref={button} className={`Text-Button ${underline ? "active" : ""} `} onClick={selectUnderline}><u>u</u></button>
                 <button ref={button} className={`Text-Button ${strikethrough ? "active" : ""} `} onClick={selectStrikethrough}><s>s</s></button>
             </div>
-            <div contentEditable={true} className="Text-Area" onInput={handleChange} name="comment" ></div>
+            <div contentEditable={true} placeholder="Add comment..." className="Text-Area" onInput={handleChange} name="comment" ></div>
         </div>
     );
 }
