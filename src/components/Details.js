@@ -39,14 +39,14 @@ export default function Details() {
       if (role === "admin") {
         return (
           <>
-            <LinkRouter className='Details-boton' to={'/editcity/' + id}>Edit City</LinkRouter>
-            <LinkRouter className='Details-boton' to={'/newitinerary/' + id}>New Itinerary</LinkRouter>
+            <LinkRouter className='detailsLinkBtn' to={'/editcity/' + id}>Edit City</LinkRouter>
+            <LinkRouter className='detailsLinkBtn' to={'/newitinerary/' + id}>New Itinerary</LinkRouter>
           </>
         )
       } else {
         return (
           <>
-            <LinkRouter className='Details-boton' to={'/newitinerary/' + id}>New Itinerary</LinkRouter>
+            <LinkRouter className='detailsLinkBtn' to={'/newitinerary/' + id}>New Itinerary</LinkRouter>
           </>
         )
       }
@@ -66,7 +66,7 @@ export default function Details() {
           <p className='Details-p country'>{cities.country} </p>
           <h2 id="Detaials-h2">{cities.city}</h2>
           <p className='Details-p'>{cities.information} </p>
-          {/* {userlogic()} */}
+          {userlogic()}
         </div>
       </div>
       <div className='ItinerariesContainer'>
