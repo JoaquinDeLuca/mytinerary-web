@@ -4,9 +4,40 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-bottom: 20px;
 }
 .ItineraryLine{
     background-color: #e1e1e1;
     width: 90%;
     height: 2px;
+}
+
+
+/* Like and User */
+.itineraryLikeAndUser{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+.itineraryImgUser{
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+}
+.itineraryUserName{
+    margin:0;
+    margin-left: 6px;
+}
+.ItineraryTitle{
+    margin-top: 7px;
+}
+@media (min-width:425px) {
+    .itineraryLikeAndUser{
+        justify-content: center;
+    }
 }
