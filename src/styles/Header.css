@@ -12,7 +12,7 @@
     font-family: Refrigerator;
     font-size: 30px;
     text-decoration: none;
-    color: white;
+    /* color: white; */
 }
 .HeaderSubLogo{
     position: absolute;
@@ -21,9 +21,16 @@
     top: 36px;
     left: 76px;
 }
+.HeaderBodyNav{
+    background-color: rgba(128, 128, 128, 0.72);
+}
 
 
-
+@media (min-width:578px) {
+    .HeaderBodyNav{
+        background-color: transparent;
+    }
+}
 
 
 
