@@ -4,7 +4,6 @@ import '../../styles/Carousel.css'
 function carousel(props) {
 
     let cities = props.data
-    console.log(cities)
 
     const showCities = (city) => {
         return (

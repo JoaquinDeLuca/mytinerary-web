@@ -10,8 +10,8 @@ export default function DeleteComment(props) {
     }
 
     return (
-        <div>
-            <button className='Comment-Button' onClick={handleDelete}>delete</button>
+        <div className='w-50'>
+            <button className='Comment-Button' onClick={handleDelete}>Delete</button>
         </div>
     )
 

@@ -8,12 +8,12 @@
     font-size: 20px;
     background-color: white;
     width: 30px;
-    height: 30px;
     font-weight: 700;
-    border-radius: 7px;
-    border: 2px solid #0000008f;
+    border: 1px solid #000000;
+    border-radius: 3px;
     cursor: pointer;
-    margin: 5px;
+    margin-right: 7px;
+    margin-bottom: 5px;
 }
 
 .active{
@@ -24,12 +24,16 @@
     resize: none;
     font-size: 20px;
     border: none;
-    width: 100%;
+    width: 97%;
     height: 150px;
-    border: 3px solid rgba(40, 40, 40, 0.818);
-    border-radius: 7px;
+    /* border: 1px solid #000000d8; */
     padding: 20px;
-
+    background-color: rgba(255, 255, 255, 0.884);
+    border-radius: 3px;
+}
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(placeholder);
+    opacity: 0.5;
 }
 
 .Text-Area:focus{

@@ -1,19 +1,23 @@
-.b{
+.likeContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.likeButton{
     border: none;
     background: none;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
     font-size: 16px;
-    margin-left: 15px;
+    margin: 12px;
 }
-
+.likeNro{
+    margin: 0;
+}
 .red{
     color: red;
 }
 
 .white{
-    color: rgba(255, 255, 255, 0.96);
+    color: rgba(0, 0, 0, 0.96);
 }
 

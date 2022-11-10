@@ -51,7 +51,7 @@ export default function Comment(props) {
                             {/* <textarea className='Comment-p' name="comment" onChange={handleChange} /> */}
                             <TextEditor setMessage={setMessage} />
                             <div className='Comment-ButtonContainer'>
-                                <button className='Comment-Button' onClick={saveData} >send</button>
+                                <button className='Comment-Button' onClick={saveData} >Send</button>
                                 <DeleteComment data={comment._id} />
                             </div>
                         </div>
@@ -59,13 +59,13 @@ export default function Comment(props) {
                         <div className='Comment-form' >
                             <div className='Comment-andButton'>
                                 <div className='Comment-p'>
-                                    <div>
+                                    <div className='m-0 p-0'>
                                         {/* {`${comment.comment}`} */}
                                         <ReactMarkdown children={comment.comment} rehypePlugins={[rehypeRaw]} />
                                     </div>
                                 </div>
                                 <div className='Comment-ButtonContainer'>
-                                    <button className='Comment-Button' onClick={editChange}>edit</button>
+                                    <button className='Comment-Button' onClick={editChange}>Edit</button>
                                     <DeleteComment data={comment._id} />
                                 </div>
                             </div>
@@ -77,7 +77,7 @@ export default function Comment(props) {
                     <div className='Comment-form' >
                         <div className='Comment-andButton' >
                             <div className='Comment-p'>
-                                <div>
+                                <div className='m-0 p-0'>
                                     {/* {`${comment.comment}`} */}
                                     <ReactMarkdown children={comment.comment} rehypePlugins={[rehypeRaw]} />
                                 </div>
@@ -92,7 +92,7 @@ export default function Comment(props) {
             else {
                 return (
                     <div className='Comment-p'>
-                        <div>
+                        <div className='m-0 p-0'>
                             {/* {`${comment.comment}`} */}
                             <ReactMarkdown children={comment.comment} rehypePlugins={[rehypeRaw]} />
                         </div>
@@ -103,7 +103,7 @@ export default function Comment(props) {
         else {
             return (
                 <div className='Comment-p'>
-                    <div>
+                    <div className='m-0 p-0'>
                         {/* {`${comment.comment}`} */}
                         <ReactMarkdown children={comment.comment} rehypePlugins={[rehypeRaw]} />
                     </div>
@@ -119,9 +119,11 @@ export default function Comment(props) {
                 <div className='Comment-containerimg'>
                     <img className='Comment-img' src={comment.user.photo} />
                 </div>
-                <p>{comment.user.name}</p>
             </div>
-            {userLogic()}
+            <div className='CommentAndUserName my-2'>
+                <p className='m-0 px-1 fw-bold'>{comment.user.name}</p>
+                {userLogic()}
+            </div>
         </div>
     )
 

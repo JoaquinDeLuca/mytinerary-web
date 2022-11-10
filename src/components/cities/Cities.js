@@ -2,6 +2,8 @@ import City from "./City"
 import { useState, useRef } from "react"
 import '../../styles/Allcity.css'
 import { useGetAllCitiesQuery } from '../../features/citiesApi'
+import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 
 export default function Allcity() {
 
@@ -11,8 +13,24 @@ export default function Allcity() {
     setValue(searchInput.current.value)
   }
 
-  const { data: cities } = useGetAllCitiesQuery(value)
+  const { data: cities, isLoading } = useGetAllCitiesQuery(value)
 
+  if(isLoading){
+    return(
+      <div className="vh-100 d-flex justify-content-center align-items-center">
+        <Button variant="dark" disabled>
+          <Spinner
+            as="span"
+            animation="grow"
+            size="sm"
+            role="status"
+            aria-hidden="true"
+          />
+          Loading...
+        </Button>
+      </div>
+    )
+  }
 
   return (
     <>

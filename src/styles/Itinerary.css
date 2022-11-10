@@ -3,54 +3,41 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 40px;
-}
-.Itinerary-Container{
-    display: flex;
-    flex-direction: column;
-    /* background-color: rgba(255, 255, 255, 0.79); */
-    padding: 12px;
-}
-/* .Itinerary-ImgContainer{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-} */
-/* .Itinerary-Img{
+    margin-bottom: 20px;
+}
+.ItineraryLine{
+    background-color: #e1e1e1;
     width: 90%;
-    padding: 10px;
-    border-radius: 18px;
-} */
-.Itinerary-InformationContainer{
-    width: 100%;
+    height: 2px;
 }
 
-.Itinerary-Title{
-    font-weight: 700;
-    font-size: 24px;
-}
-/* Activities */
-/* .Itinerary-ActivitiesContainer{}; */
 
-.Itinerary-ActivityTitle{
-    font-weight: 700;
-    /* font-size: 20px; */
-    padding-left: 10px;
-}
-
-.Itinerary-User{
+/* Like and User */
+.itineraryLikeAndUser{
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 20px 0;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
 }
-
-.Itinerary-ImgUser{
-    width: 35px;
+.itineraryImgUser{
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
+    margin: 0;
+    padding: 0;
 }
-
-.Itinerary-UserName{
-    font-weight: 500;
-    font-size: 18px;
+.itineraryUserName{
+    margin:0;
+    margin-left: 6px;
+}
+.ItineraryTitle{
+    margin-top: 7px;
+}
+@media (min-width:425px) {
+    .itineraryLikeAndUser{
+        justify-content: center;
+    }
 }
