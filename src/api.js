@@ -1,4 +1,4 @@
-const api = 'https://my-tinerary-back-agunicjoa.herokuapp.com'
+const api = 'https://fair-fawn-cowboy-hat.cyclic.app'
 
 // const api = 'http://localhost:4000'
 
