@@ -7,7 +7,15 @@ export default function Itineraries(props) {
 
     const id = props.data._id
 
-    const { data: itineraries } = useGetItinerariesQuery(id)
+    const { data: itineraries, isLoading } = useGetItinerariesQuery(id)
+
+    if(isLoading){
+        return(
+          <div className="Cities-Loader">
+            <span className="loader"></span>
+          </div>
+        )
+    }
 
     return (
         <div className="Itinerary">

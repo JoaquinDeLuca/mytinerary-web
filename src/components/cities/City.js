@@ -6,15 +6,19 @@ export default function City(props) {
 
     return (
         <>
-            <LinkRouter className="PrintCity-link" to={`/city/${cities._id}`} >
-                <div className="PrintCity-container">
-                    <div className="PrintCity-Card">
-                        <img className="PrintCity-img" src={cities.photo} alt={cities.city} />
-                        <p className="PrintCity-name">{cities.city}</p>
-                        <p className="PrintCity-p">{cities.information}</p>
+            <div className="cityContainerCard">
+                <LinkRouter className="PrintCity-link" to={`/city/${cities._id}`} >
+                    <div className="cityCard">
+                        <img className="cityImg" src={cities.photo} alt={cities.city} />
+                        <div className="cardImgOverlay">
+                            <h3>{cities.city}</h3>
+                            <p className="">{cities.country}</p>
+                            {/* <p className="">Population: {cities.population}</p> */}
+                            <p className="">{cities.information}</p>
+                        </div>
                     </div>
-                </div>
-            </LinkRouter>
+                </LinkRouter>
+            </div>
         </>
     )
 }

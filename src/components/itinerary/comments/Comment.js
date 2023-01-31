@@ -72,7 +72,7 @@ export default function Comment(props) {
                         </div>
                 )
             }
-            else if (user == 'admin') {
+            else if (user === 'admin') {
                 return (
                     <div className='Comment-form' >
                         <div className='Comment-andButton' >
@@ -117,11 +117,13 @@ export default function Comment(props) {
         <div className='Comment-container'>
             <div className='Comment-user'>
                 <div className='Comment-containerimg'>
-                    <img className='Comment-img' src={comment.user.photo} />
+                    <img className='Comment-img' src={comment.user.photo} alt={comment.user.name} />
                 </div>
-                <p>{comment.user.name}</p>
             </div>
-            {userLogic()}
+            <div className='CommentAndUserName my-2'>
+                <p className='m-0 px-1 fw-bold'>{comment.user.name}</p>
+                {userLogic()}
+            </div>
         </div>
     )
 
