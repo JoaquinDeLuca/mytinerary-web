@@ -60,13 +60,12 @@
     padding: 8px;
     border-radius: 3px;
     background: #e8e8e86f;
-    border: 1px solid #e8e8e883;
+    border: 0;
     transition: all .3s;
-    box-shadow: 4px 4px 12px #c5c5c5b3,
-                -4px -4px 12px #ffffff;
+    box-shadow: 4px 4px 12px #7c7c7cb5;
     width: 80px;
     margin: 5px 0;
-    
+    cursor: pointer;
 }  
 .Comment-Button:active {
     color: #666;
