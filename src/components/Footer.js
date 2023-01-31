@@ -24,15 +24,15 @@ export default function Footer() {
   return (
     <footer className='Footer-container'>
       <div className='Footer-web'>
-        <a href="https://www.facebook.com/" target="_blank" className='Footer-link'><img className='Footer-icon' src="https://i.ibb.co/SN2Wsgx/facebook.png" alt='facebook' /></a>
-        <a href="https://www.instagram.com/" target="_blank" className='Footer-link'><img className='Footer-icon' src="https://i.ibb.co/7ghYMbs/instagram.png" alt='instagram' /></a>
-        <a href="https://web.telegram.org/" target="_blank" className='Footer-link'><img className='Footer-icon' src="https://i.ibb.co/X7X4Xyx/telegram.png" alt='telegram' /></a>
+        <p>Our social networks</p>
+        <div className='Footer-redes'>
+          <a rel='noopener noreferrer' href="https://www.facebook.com/" target="_blank" className='Footer-link'><img className='Footer-icon' src="https://i.ibb.co/SN2Wsgx/facebook.png" alt='facebook' /></a>
+          <a rel='noopener noreferrer' href="https://www.instagram.com/" target="_blank" className='Footer-link'><img className='Footer-icon' src="https://i.ibb.co/7ghYMbs/instagram.png" alt='instagram' /></a>
+          <a rel='noopener noreferrer' href="https://web.telegram.org/" target="_blank" className='Footer-link'><img className='Footer-icon' src="https://i.ibb.co/X7X4Xyx/telegram.png" alt='telegram' /></a>
+        </div>
       </div>
       <div className='Footer-copyright'>
         <p>  Mytinerary | © {year}</p>
-        <p>
-          <a href="https://github.com/NicoOjeda" target="_blank" className='Footer-github'>Ojeda</a> | <a href="https://github.com/JoaquinDeLuca" target="_blank" className='Footer-github'>De Luca</a> | <a href="https://github.com/LilAguh" target="_blank" className='Footer-github'>Ochoa</a>
-        </p>
       </div>
       <div className='Footer-box'>
         <div className='Footer-nav'>

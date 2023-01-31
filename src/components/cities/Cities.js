@@ -11,14 +11,21 @@ export default function Allcity() {
     setValue(searchInput.current.value)
   }
 
-  const { data: cities } = useGetAllCitiesQuery(value)
+  const { data: cities, isLoading } = useGetAllCitiesQuery(value)
 
+  if(isLoading){
+    return(
+      <div className="Cities-Loader">
+        <span className="loader"></span>
+      </div>
+    )
+  }
 
   return (
     <>
       <div className="Allcity-container">
         <div className="Allcity-divInput">
-          <input className="Allcity-input" name="text" type="text" placeholder="Find city:" ref={searchInput} onChange={searchValue} />
+          <input className="Allcity-input" name="text" type="text" placeholder="Find city" ref={searchInput} onChange={searchValue} />
         </div>
         <div className="Allcity-Printcity">
           {cities?.map(cities => <City key={cities.city} name={cities.city} data={cities} />)}
