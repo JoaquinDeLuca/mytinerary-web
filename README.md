@@ -4,7 +4,7 @@
 
 ## Ejemplo en vivo
 - https://mytinerary-eta.vercel.app/
-- [Back-end](repo)
+- [Back-end](https://github.com/JoaquinDeLuca/mytinerary-back-deluca-ochoa-ojeda)
 
 ## Tecnologías 🛠
 <!-- Sacdo de: https://github.com/alexandresanlim/Badges4-README.md-Profile -->
