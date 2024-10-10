@@ -1,5 +1,5 @@
-const api = 'https://fair-fawn-cowboy-hat.cyclic.app'
+const api = "https://mytinerary-back-deluca-ochoa-ojeda-1.onrender.com";
 
-// const api = 'http://localhost:4000'
+// const api = "http://localhost:4000";
 
-export default api
+export default api;
